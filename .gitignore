@@ -1,0 +1,11 @@
+# 개인정보 · 환경 변수
+.env
+.env.*
+!.env.example
+
+# .env 로 만들어지는 파일
+js/env.js
+
+# macOS · 에디터
+.DS_Store
+.vscode/
