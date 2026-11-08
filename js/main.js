@@ -116,6 +116,7 @@
     document.querySelectorAll(".count").forEach(countUp);
     document.querySelectorAll("mark.sweep").forEach(function (m) { m.classList.add("on"); });
     document.querySelectorAll(".ax-row").forEach(function (r) { r.classList.add("in"); });
+    var fv = document.querySelector(".fu-visual"); if (fv) fv.classList.add("play");
     return;
   }
 
@@ -136,6 +137,10 @@
   gsap.utils.toArray(".dash-row").forEach(function (r) {
     ScrollTrigger.create({ trigger: r, start: "top 80%", once: true, onEnter: function () { r.classList.add("in"); } });
   });
+
+  /* ForwardUs 흐름 · Git 그래프 */
+  ScrollTrigger.create({ trigger: ".fu-visual", start: "top 80%", once: true, onEnter: function () { document.querySelector(".fu-visual").classList.add("play"); } });
+  ScrollTrigger.create({ trigger: ".git", start: "top 75%", once: true, onEnter: function () { document.querySelector(".git").classList.add("in"); } });
 
   /* 공통 등장 */
   gsap.utils.toArray(".reveal").forEach(function (el) {
