@@ -205,7 +205,24 @@
 (function(){
   var mv = document.querySelector('.char3d');
   if(!mv) return;
+  /* index.html을 더블클릭(file://)으로 열면 브라우저가 .glb 파일을 못 읽어서
+     캐릭터가 안 움직입니다. 이때는 같은 모델을 담은 js/char-glb.js를 불러와 씁니다. */
+  if(location.protocol === 'file:'){
+    var sc = document.createElement('script');
+    sc.src = 'js/char-glb.js';
+    sc.onload = function(){ if(window.CHAR_GLB) mv.src = window.CHAR_GLB; };
+    document.body.appendChild(sc);
+  }
+  /* 손 흔들기 반복: 처음엔 손을 드는 동작부터 재생하고,
+     이후엔 손을 든 채 흔드는 구간(WAVE_FROM~WAVE_TO초)만 계속 반복해서 반기는 느낌을 줍니다. */
+  var WAVE_FROM = 1.0, WAVE_TO = 2.1;
+  function waveLoop(){
+    if(!mv.paused && mv.currentTime >= WAVE_TO) mv.currentTime = WAVE_FROM;
+    requestAnimationFrame(waveLoop);
+  }
   mv.addEventListener('load', function(){
+    mv.currentTime = 0; mv.play();
+    requestAnimationFrame(waveLoop);
     try{
       mv.model.materials.forEach(function(m){
         var t = m.pbrMetallicRoughness.baseColorTexture.texture;
