@@ -48,6 +48,14 @@
     <p class="hero-ax hero-fade">매일 반복되던 일을 직접 겪어 봤기 때문에, 무엇부터 줄여야 하는지 압니다.</p>
     <a class="btn-pill hero-fade" href="#reboot" data-scroll>대표 결과물 보기</a>
   </div>
+  <!-- 3D 캐릭터: assets/3d/hyeonseo.glb (Higgsfield · Meshy 7, 리깅 + Idle 애니메이션) -->
+  <div class="hero-char hero-fade" aria-hidden="true">
+    <model-viewer class="char3d" src="assets/3d/hyeonseo.glb" poster="assets/img/hyeonseo-front.png"
+      alt="강현서 3D 캐릭터" autoplay camera-controls disable-zoom disable-pan interaction-prompt="none"
+      camera-orbit="0deg 82deg auto" field-of-view="26deg" shadow-intensity="0.6" shadow-softness="1"
+      exposure="1.05" environment-image="neutral" loading="eager"></model-viewer>
+    <span class="char-hint">드래그해서 돌려 보세요</span>
+  </div>
 
 </section>
 
@@ -147,6 +155,33 @@
       <div><span>기술</span><p>Python · Flask · SQLAlchemy · Chart.js · OpenAI · Claude · Higgsfield · SerpApi · YouTube API · Render</p></div>
     </div>
 
+    <!-- 기업 페인포인트 3가지 → 결과물 -->
+    <div class="pains">
+      <div class="pains-head reveal">
+        <p class="label light">Pain Points → Outputs</p>
+        <h3>알디콤의 고민 세 가지에서<br>세 가지 결과물이 나왔습니다</h3>
+        <p class="pains-desc">좋은 제품을 가진 알디콤이 미국에서 고전하는 이유는 제품이 아니라 <b>"말할 수 없는 시장"</b>과 <b>"부족한 사람"</b>이었습니다.</p>
+      </div>
+      <div class="pain-rows">
+        <article class="pain-row reveal">
+          <div class="pr-pain"><span class="pr-no">PAIN 01</span><h4>효능을 말할 수 없는 시장</h4><p>FDA는 숙취를 질병 상태로 보고 "예방 · 치료 · 완화" 표현을 단속합니다. 2020년 숙취 제품 경고장 <b>7건</b>. 인플루언서 발언도 브랜드 책임(FTC)입니다.</p></div>
+          <i class="pr-arrow" aria-hidden="true"></i>
+          <div class="pr-out"><span class="pr-no">OUTPUT</span><h4>광고 문구 자동 점검</h4><p>경고장의 문제 표현 53개 → 규칙 13개. 홈페이지 상세페이지 · 챗봇 답변과 대시보드 광고 심의에서 같은 기준으로 검사</p><b class="pr-res">광고 문구 1차 검토 시간 −77.8%</b></div>
+        </article>
+        <article class="pain-row reveal">
+          <div class="pr-pain"><span class="pr-no">PAIN 02</span><h4>낮은 인지도, 좁은 판매 접점</h4><p>Weee! · Yamibuy 같은 아시아계 채널 위주라 일반 미국 소비자에게는 브랜드도, 카테고리도 낯섭니다.</p></div>
+          <i class="pr-arrow" aria-hidden="true"></i>
+          <div class="pr-out"><span class="pr-no">OUTPUT</span><h4>공식 홈페이지 · 크리에이터 링크</h4><p>효능 대신 맛과 포맷으로 다가가는 브랜드 사이트와 자사몰. 크리에이터별 전용 링크 · 할인코드로 SNS 유입을 매출까지 추적</p><b class="pr-res">5일간 게시물 91개 · 릴스 누적 조회 4,961회</b></div>
+        </article>
+        <article class="pain-row reveal">
+          <div class="pr-pain"><span class="pr-no">PAIN 03</span><h4>1명이 5개 채널을 운영</h4><p>해외 담당자 한 명이 Amazon · Weee! · Yamibuy · TikTok · Instagram을 맡아, 카피 작성 · 규제 확인 · 채널별 재작성에 시간이 몰립니다.</p></div>
+          <i class="pr-arrow" aria-hidden="true"></i>
+          <div class="pr-out"><span class="pr-no">OUTPUT</span><h4>마케팅 담당자 대시보드</h4><p>하루 업무 순서대로 메뉴 8개. 카피 입력 → 규제 심의 → 채널별 카피 복사를 한 화면에서 끝내고, 아낀 시간은 분석 · 기획에</p><b class="pr-res">카드뉴스 제작 −64.7% · 이미지 제작 −52.8%</b></div>
+        </article>
+      </div>
+      <p class="pains-note">출처: 팀 「미국 숙취해소제 시장 타당성 분석」 · 단축률은 마케터 1명이 같은 과제를 비교한 실측</p>
+    </div>
+
     <!-- 마케팅 담당자 대시보드 (인턴 경험 연결) -->
     <div class="dash">
       <div class="dash-head reveal">
@@ -192,10 +227,11 @@
         <span class="step-dot" aria-hidden="true"></span>
         <div class="step-card">
           <p class="step-no">STEP 1 · 문제 정의</p>
-          <h3>미국에서는 효능을 말할 수 없고, 담당자는 한 명이었습니다</h3>
-          <ul class="facts">
-            <li><b>7건</b>2020년 FDA가 숙취 제품에 보낸 경고장</li>
-            <li><b>1명 · 5채널</b>Amazon · Weee! · Yamibuy · TikTok · Instagram</li>
+          <h3>규제 · 인지도 · 인력, 세 가지 문제를 먼저 정의했습니다</h3>
+          <ul class="facts three">
+            <li><b>7건</b>2020년 FDA 숙취 제품 경고장</li>
+            <li><b>아시아계 채널</b>낮은 일반 소비자 인지도</li>
+            <li><b>1명 · 5채널</b>해외 담당자 한 명이 전부</li>
           </ul>
         </div>
       </article>
@@ -430,6 +466,7 @@
 <script src="js/vendor/ScrollTrigger.min.js"></script>
 <script src="js/vendor/lenis.min.js"></script>
 <script src="js/env.js"></script>
+<script src="js/vendor/model-viewer-umd.min.js" defer></script>
 <script src="js/main.js"></script>
 </body>
 </html>

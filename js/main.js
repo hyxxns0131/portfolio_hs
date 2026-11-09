@@ -117,6 +117,7 @@
     document.querySelectorAll("mark.sweep").forEach(function (m) { m.classList.add("on"); });
     document.querySelectorAll(".ax-row").forEach(function (r) { r.classList.add("in"); });
     var fv = document.querySelector(".fu-visual"); if (fv) fv.classList.add("play");
+    document.querySelectorAll(".pain-row").forEach(function (r) { r.classList.add("in"); });
     return;
   }
 
@@ -141,6 +142,11 @@
   /* ForwardUs 흐름 · Git 그래프 */
   ScrollTrigger.create({ trigger: ".fu-visual", start: "top 80%", once: true, onEnter: function () { document.querySelector(".fu-visual").classList.add("play"); } });
   ScrollTrigger.create({ trigger: ".git", start: "top 75%", once: true, onEnter: function () { document.querySelector(".git").classList.add("in"); } });
+
+  /* 페인포인트 → 결과물 화살표 */
+  gsap.utils.toArray(".pain-row").forEach(function (r) {
+    ScrollTrigger.create({ trigger: r, start: "top 80%", once: true, onEnter: function () { r.classList.add("in"); } });
+  });
 
   /* 공통 등장 */
   gsap.utils.toArray(".reveal").forEach(function (el) {
@@ -192,4 +198,19 @@
   gsap.from(".work", { y: 20, opacity: 0, duration: 0.6, ease: "power2.out", stagger: 0.05, scrollTrigger: { trigger: ".works", start: "top 85%", once: true } });
 
   window.addEventListener("load", function () { ScrollTrigger.refresh(); });
+})();
+
+/* ===== 3D 캐릭터 (model-viewer) =====
+   텍스처 경계에 흰 점이 번지는 현상을 막기 위해 밉맵 대신 LINEAR 필터 사용 */
+(function(){
+  var mv = document.querySelector('.char3d');
+  if(!mv) return;
+  mv.addEventListener('load', function(){
+    try{
+      mv.model.materials.forEach(function(m){
+        var t = m.pbrMetallicRoughness.baseColorTexture.texture;
+        if(t && t.sampler) t.sampler.setMinFilter(9729);
+      });
+    }catch(e){}
+  });
 })();
