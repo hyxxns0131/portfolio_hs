@@ -5,7 +5,7 @@
 
 ## 구조
 - index.html : 섹션 순서
-  ① 첫 화면 → ② 신성통상 인턴 → ③ REBOOT → ④ 뷰티·패션 결과물 → ⑤ ForwardUs·기타 → ⑥ 이력·도구 → ⑦ 연락처
+  ① 첫 화면 → ② 신성통상 인턴 → ③ REBOOT → ④ ForwardUs·기타 → ⑤ 이력·도구 → ⑥ 연락처
 - css/style.css : 맨 위 :root 에 색 (--blue 가 로즈 포인트 색)
 - js/main.js : 별 배경, 화면 표시 효과, 모바일 메뉴, 이미지 뷰어, 주소 복사, 3D 캐릭터
 - js/vendor/model-viewer-umd.min.js : 3D 캐릭터 표시 (gsap · ScrollTrigger · lenis 파일은 현재 쓰지 않음)
