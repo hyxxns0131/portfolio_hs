@@ -88,9 +88,9 @@
 <section class="sec" id="about">
   <div class="wrap">
     <div class="folder reveal">
-      <div class="f-tabs" aria-hidden="true">
-        <span class="t1">INTRODUCTION →</span><span class="t2">MY EXPERTISE →</span><span class="t3">MY WORKFLOW →</span>
-      </div>
+      <nav class="f-tabs" aria-label="소개 영역 바로가기">
+        <a class="t1" href="#about">INTRODUCTION →</a><a class="t2" href="#workflow">TEAM WORKFLOW →</a><a class="t3" href="#intern">MY EXPERIENCE →</a>
+      </nav>
       <div class="f-body about">
         <!-- 얼굴 사진 칸: assets/img/me.jpg 파일을 넣으면 자동으로 보입니다 -->
         <figure class="win photo-slot">
@@ -118,25 +118,27 @@
   </div>
 </section>
 
-<!-- ============ WORKFLOW ============ -->
+<!-- ============ TEAM WORKFLOW (프로젝트 진행 방식 · REBOOT 기준) ============ -->
 <section class="sec workflow" id="workflow">
   <div class="wrap">
     <div class="wf-top">
-      <h2 class="big-blue reveal">문제 먼저,<br>도구는 그다음.</h2>
+      <h2 class="big-blue reveal">역할과 규칙 먼저,<br>개발은 그다음.</h2>
       <ul class="gray-card reveal">
-        <li>현장에서 반복되는 일과 불편을 먼저 적습니다.</li>
-        <li>무엇을 줄일지, 어떤 기준으로 판단할지 정합니다.</li>
-        <li>만든 뒤에는 전과 후를 같은 과제로 비교합니다.</li>
+        <li>PM으로서 역할 분담 · 브랜치 · 충돌 방지 규칙을 README에 먼저 정리했습니다.</li>
+        <li>한 PR에는 한 파트만, 각자 자기 폴더만 수정해 충돌을 줄였습니다.</li>
+        <li>AI가 만든 결과물은 사람이 확인한 뒤에 반영했습니다.</li>
       </ul>
     </div>
-    <p class="wf-cap reveal">My Workflow</p>
+    <p class="wf-cap reveal">Team Workflow <small>REBOOT 팀 프로젝트 기준</small></p>
     <div class="wf-panel reveal">
       <ol class="wf-steps">
-        <li><span class="circle">01<b>Pain Point</b></span><h3>문제 찾기</h3><p>반복 업무 · 불편 · 리스크를 목록으로</p></li>
-        <li><span class="circle">02<b>Criteria</b></span><h3>기준 세우기</h3><p>줄일 일과 판단 기준, 역할 · 규칙 정리</p></li>
-        <li><span class="circle">03<b>Build</b></span><h3>만들기</h3><p>AI는 초안, 사람은 확인 · 결정</p></li>
-        <li><span class="circle">04<b>Measure</b></span><h3>측정 · 개선</h3><p>같은 과제로 전 · 후 비교</p></li>
+        <li><span class="circle">01<b>Define</b></span><h3>문제 정의</h3><p>시장 타당성 분석으로 페인포인트 3가지 정리</p></li>
+        <li><span class="circle">02<b>Rules</b></span><h3>역할 · 규칙 정하기</h3><p>README에 역할 분담 · 브랜치 · 병합 순서 기록</p></li>
+        <li><span class="circle">03<b>Build</b></span><h3>파트별 개발</h3><p><code>feature/이니셜-기능명</code> 브랜치에서 자기 폴더만 수정</p></li>
+        <li><span class="circle">04<b>Review</b></span><h3>PR · 병합</h3><p><code>dev</code>로 PR → 확인 후 <code>main</code>에 병합</p></li>
+        <li><span class="circle">05<b>Ship</b></span><h3>배포 · 측정</h3><p><code>main</code>만 배포, 같은 과제로 전 · 후 실측</p></li>
       </ol>
+      <p class="wf-note">1차 프로젝트 ForwardUs에서 업무 분담이 흐렸던 경험을 바탕으로, 2차 프로젝트 REBOOT에서 이 흐름을 먼저 정하고 시작했습니다.</p>
     </div>
   </div>
 </section>
