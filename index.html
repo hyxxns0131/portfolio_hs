@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<a class="skip" href="#about">본문 바로가기</a>
+<a class="skip" href="#work">본문 바로가기</a>
 
 <!-- ============ HEADER (슬라이드 머리글 스타일) ============ -->
 <header class="header" id="header">
@@ -29,10 +29,11 @@
     <a class="logo" href="#top">PORTFOLIO</a>
     <span class="h-role">ONLINE MD · 강현서</span>
     <nav class="gnb" id="gnb" aria-label="섹션 이동">
+      <a href="#work">프로젝트</a>
       <a href="#about">소개</a>
       <a href="#intern">인턴</a>
-      <a href="#work">프로젝트</a>
       <a href="#resume">이력</a>
+      <a href="#workflow">팀 워크플로우</a>
       <a href="#contact">연락</a>
     </nav>
     <span class="h-year" aria-hidden="true">20(26)</span>
@@ -83,113 +84,51 @@
     <p class="cover-tag">반복 업무를 줄이는<br>온라인 MD</p>
 
     <div class="cover-btns">
-      <a class="btn" href="#intern">인턴 경험 보기</a>
-      <a class="btn line" href="#work">프로젝트 폴더 열기</a>
+      <a class="btn" href="#work">프로젝트 폴더 열기</a>
+      <a class="btn line" href="#intern">인턴 경험 보기</a>
     </div>
   </div>
-</section>
-
-<!-- ============ ABOUT (폴더 패널) ============ -->
-<section class="sec" id="about">
-  <div class="wrap">
-    <div class="folder reveal">
-      <nav class="f-tabs" aria-label="소개 영역 바로가기">
-        <a class="t1" href="#about">INTRODUCTION →</a><a class="t2" href="#workflow">TEAM WORKFLOW →</a><a class="t3" href="#intern">MY EXPERIENCE →</a>
-      </nav>
-      <div class="f-body about">
-        <!-- 얼굴 사진 칸: assets/img/me.jpg 파일을 넣으면 자동으로 보입니다 -->
-        <figure class="win photo-slot">
-          <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="photo-box">
-            <img src="assets/img/me.jpg" alt="강현서 프로필 사진" id="mePhoto" hidden>
-            <div class="photo-empty" id="photoEmpty">
-              <span class="pe-ico" aria-hidden="true">◎</span>
-              <span>프로필 사진 자리</span>
-              <small>assets/img/me.jpg</small>
-            </div>
-          </div>
-        </figure>
-        <div class="about-txt">
-          <div class="about-top">
-            <p class="hi">안녕하세요, 강현서입니다</p>
-            <p class="about-h">About Me</p>
-          </div>
-          <h2>온라인 MD 인턴 경험을 바탕으로, <b>상품 운영과 매출 분석의 반복 업무</b>를 줄이는 강현서입니다.</h2>
-          <p>신성통상 온라인 MD 인턴으로 가격 · 프로모션 세팅과 매출 · 할인율 분석을 했습니다. 이후 무역 AX 마스터 과정에서 그때 손으로 하던 일을 기준으로, AI와 자동화로 반복을 줄이는 도구를 팀과 함께 만들었습니다.</p>
-          <p class="ax-note"><b>AX</b>(AI Transformation) — 반복되는 일에 AI와 자동화를 붙여 일하는 방식을 바꾸는 것</p>
+  <!-- 이력 한눈에 보기 (파일 카드) -->
+  <div class="wrap creds-wrap">
+    <p class="creds-cap"><span>MY FILES</span>학교에서 숫자를, 현장에서 상품을, 지금은 AX를 배우고 있습니다.</p>
+    <ul class="creds">
+      <li class="cred cr1">
+        <span class="cred-tab">01 · EDUCATION</span>
+        <div class="cred-body">
+          <svg class="cred-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z" fill="currentColor"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <p class="cred-k">동국대학교 <b>수료</b></p>
+          <p class="cred-d">국제통상학 · 회계학 복수전공<br>무역 흐름과 원가 · 수익 구조를 함께 공부했습니다.</p>
+          <p class="cred-y">2021.03 – 2027.02</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TEAM WORKFLOW (프로젝트 진행 방식 · REBOOT 기준) ============ -->
-<section class="sec workflow" id="workflow">
-  <div class="wrap">
-    <div class="wf-top">
-      <h2 class="big-blue reveal">역할과 규칙 먼저,<br>개발은 그다음.</h2>
-      <ul class="gray-card reveal">
-        <li>PM으로서 역할 분담 · 브랜치 · 충돌 방지 규칙을 README에 먼저 정리했습니다.</li>
-        <li>한 PR에는 한 파트만, 각자 자기 폴더만 수정해 충돌을 줄였습니다.</li>
-        <li>AI가 만든 결과물은 사람이 확인한 뒤에 반영했습니다.</li>
-      </ul>
-    </div>
-    <p class="wf-cap reveal">Team Workflow <small>REBOOT 팀 프로젝트 기준</small></p>
-    <div class="wf-panel reveal">
-      <ol class="wf-steps">
-        <li><span class="circle">01<b>Define</b></span><h3>문제 정의</h3><p>시장 타당성 분석으로 페인포인트 3가지 정리</p></li>
-        <li><span class="circle">02<b>Rules</b></span><h3>역할 · 규칙 정하기</h3><p>README에 역할 분담 · 브랜치 · 병합 순서 기록</p></li>
-        <li><span class="circle">03<b>Build</b></span><h3>파트별 개발</h3><p><code>feature/이니셜-기능명</code> 브랜치에서 자기 폴더만 수정</p></li>
-        <li><span class="circle">04<b>Review</b></span><h3>PR · 병합</h3><p><code>dev</code>로 PR → 확인 후 <code>main</code>에 병합</p></li>
-        <li><span class="circle">05<b>Ship</b></span><h3>배포 · 측정</h3><p><code>main</code>만 배포, 같은 과제로 전 · 후 실측</p></li>
-      </ol>
-      <p class="wf-note">1차 프로젝트 ForwardUs에서 업무 분담이 흐렸던 경험을 바탕으로, 2차 프로젝트 REBOOT에서 이 흐름을 먼저 정하고 시작했습니다.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ INTERN ============ -->
-<section class="sec intern" id="intern">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">MY EXPERIENCE</p>
-      <h2>신성통상 <span class="blue">온라인 MD 인턴</span></h2>
-      <p class="sec-meta">E-MD2팀 · 2025.03 – 2025.06 · 산학 인턴(IPP) · 자사몰 · 네이버 · 무신사</p>
-    </div>
-
-    <div class="flow-legend reveal" aria-hidden="true">
-      <span class="lg-a">실제 업무</span><i>→</i><span class="lg-b">느낀 점 · 판단 기준</span><i>→</i><span class="lg-c">교육 프로젝트에서 구현</span>
-    </div>
-
-    <div class="flows">
-      <article class="flow reveal">
-        <div class="fa"><span class="ft">실제 업무</span><h3>가격 · 프로모션 세팅</h3><p>행사 상품의 가격과 프로모션을 관리하고, 가격 설정과 프로모션 세팅을 맡았습니다.</p></div>
-        <div class="fb"><span class="ft">느낀 점</span><p>채널마다 같은 상품의 가격 · 프로모션을 따로 세팅해야 해서 반복 작업에 시간이 많이 들었습니다.</p></div>
-        <div class="fc"><span class="ft">REBOOT · 브랜드 사이트</span><p>문장 하나로 팝업 · 할인 초안을 만들고, 날짜 · 가격 · 광고 문구를 검사한 뒤 관리자가 확인해 저장</p></div>
-      </article>
-      <article class="flow reveal">
-        <div class="fa"><span class="ft">실제 업무</span><h3>매출 · 할인율 분석</h3><p>상품별 매출과 할인율을 분석하고 딜을 운영했습니다.</p></div>
-        <div class="fb"><span class="ft">느낀 점</span><p>상품별 매출과 할인율을 매번 따로 모아 정리해야 했습니다.</p></div>
-        <div class="fc"><span class="ft">REBOOT · 마케팅 대시보드(팀)</span><p>채널별 광고비 · 매출 · ROAS · CPA 자동 계산, 주간 성과 보고서 PDF 출력</p></div>
-      </article>
-      <article class="flow reveal">
-        <div class="fa"><span class="ft">실제 업무</span><h3>수익성 검토</h3><p>원가와 판매가를 분석하고, 판매가를 시장 최저가와 비교해 예상 수익률을 산출했습니다.</p></div>
-        <div class="fb"><span class="ft">판단 기준</span><p>가격 경쟁력뿐 아니라 <b>원가 구조와 판매 비용</b>까지 함께 봐야 실질 수익성을 판단할 수 있다는 점을 배웠습니다.</p></div>
-        <div class="fc"><span class="ft">REBOOT · 브랜드 사이트 / 대시보드(팀)</span><p>크리에이터 링크 정산에 할인율 · 수수료율 반영, 대시보드에서 경쟁 제품 가격 · 리뷰 수집</p></div>
-      </article>
-      <article class="flow reveal">
-        <div class="fa"><span class="ft">실제 업무</span><h3>상품 등록 · 실적 관리</h3><p>자사몰 · 네이버 · 무신사 등 온라인 채널에 상품을 등록하고 판매 실적을 관리했습니다.</p></div>
-        <div class="fb"><span class="ft">느낀 점</span><p>매일 여러 채널을 돌며 현황을 확인해야 했습니다.</p></div>
-        <div class="fc"><span class="ft">REBOOT · 마케팅 대시보드(팀)</span><p>이번 주 매출 · 오늘 할 일 · 시즌 D-day를 한 화면에 모은 데일리 브리핑</p></div>
-      </article>
-    </div>
-
-    <article class="dark-card insight reveal">
-      <p class="dc-head">플랫폼 분석 발표 <b aria-hidden="true">✓</b></p>
-      <h3>자회사 패션 플랫폼 ‘굿웨어몰’ 성장 방향 제안</h3>
-      <p>인턴 기간에 다른 패션 플랫폼의 <b>상품 구성 · 화면 배치 · 카테고리 분류 · 프로모션 방식</b>을 비교 · 분석했습니다. 핵심 상품과 프로모션이 한눈에 보이는 화면 구성과, 구매 이력 · 관심 상품을 활용한 맞춤 추천을 개선 방향으로 제안했습니다.</p>
-      <p class="insight-role">맡은 일 · 경쟁 플랫폼 분석 자료 정리, 개선 방향 정리, 발표 자료 구성</p>
-    </article>
+      </li>
+      <li class="cred cr2">
+        <span class="cred-tab">02 · INTERNSHIP</span>
+        <div class="cred-body">
+          <svg class="cred-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2" fill="currentColor"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <p class="cred-k">신성통상 <b>IPP 인턴</b></p>
+          <p class="cred-d">패션 회사 E-MD2팀 온라인 MD<br>가격 · 프로모션 · 매출 분석 실무 4개월</p>
+          <p class="cred-y">2025.03 – 2025.06</p>
+        </div>
+      </li>
+      <li class="cred cr3">
+        <span class="cred-tab">03 · AX TRAINING <i class="now">이수 중</i></span>
+        <div class="cred-body">
+          <svg class="cred-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" stroke="currentColor" stroke-width="2"/></svg>
+          <p class="cred-k">한국무역협회 <b>무역 AX 마스터 2기</b></p>
+          <p class="cred-d">AI · 자동화를 실무에 붙이는 과정<br>팀 프로젝트 1위 · 개인 작업 다수</p>
+          <p class="cred-y">2026.08 – 현재</p>
+        </div>
+      </li>
+      <li class="cred cr4">
+        <span class="cred-tab">04 · ABROAD</span>
+        <div class="cred-body">
+          <svg class="cred-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 14l20-7-6 13-3-5z" fill="currentColor"/></svg>
+          <p class="cred-k">영국 케임브리지 <b>어학연수</b></p>
+          <p class="cred-d">다양한 국적의 친구들과 부딪히며<br>낯선 환경에 먼저 다가가는 법을 배웠습니다. · OPIc IH</p>
+          <p class="cred-y">2025.08 – 2026.02</p>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -439,6 +378,85 @@
   </div>
 </section>
 
+<!-- ============ ABOUT (폴더 패널) ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="folder reveal">
+      <nav class="f-tabs" aria-label="소개 영역 바로가기">
+        <a class="t1" href="#about">INTRODUCTION →</a><a class="t2" href="#workflow">TEAM WORKFLOW →</a><a class="t3" href="#intern">MY EXPERIENCE →</a>
+      </nav>
+      <div class="f-body about">
+        <!-- 얼굴 사진 칸: assets/img/me.jpg 파일을 넣으면 자동으로 보입니다 -->
+        <figure class="win photo-slot">
+          <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="photo-box">
+            <img src="assets/img/me.jpg" alt="강현서 프로필 사진" id="mePhoto" hidden>
+            <div class="photo-empty" id="photoEmpty">
+              <span class="pe-ico" aria-hidden="true">◎</span>
+              <span>프로필 사진 자리</span>
+              <small>assets/img/me.jpg</small>
+            </div>
+          </div>
+        </figure>
+        <div class="about-txt">
+          <div class="about-top">
+            <p class="hi">안녕하세요, 강현서입니다</p>
+            <p class="about-h">About Me</p>
+          </div>
+          <h2>온라인 MD 인턴 경험을 바탕으로, <b>상품 운영과 매출 분석의 반복 업무</b>를 줄이는 강현서입니다.</h2>
+          <p>신성통상 온라인 MD 인턴으로 가격 · 프로모션 세팅과 매출 · 할인율 분석을 했습니다. 이후 무역 AX 마스터 과정에서 그때 손으로 하던 일을 기준으로, AI와 자동화로 반복을 줄이는 도구를 팀과 함께 만들었습니다.</p>
+          <p class="ax-note"><b>AX</b>(AI Transformation) — 반복되는 일에 AI와 자동화를 붙여 일하는 방식을 바꾸는 것</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTERN ============ -->
+<section class="sec intern" id="intern">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">MY EXPERIENCE</p>
+      <h2>신성통상 <span class="blue">온라인 MD 인턴</span></h2>
+      <p class="sec-meta">E-MD2팀 · 2025.03 – 2025.06 · 산학 인턴(IPP) · 자사몰 · 네이버 · 무신사</p>
+    </div>
+
+    <div class="flow-legend reveal" aria-hidden="true">
+      <span class="lg-a">실제 업무</span><i>→</i><span class="lg-b">느낀 점 · 판단 기준</span><i>→</i><span class="lg-c">교육 프로젝트에서 구현</span>
+    </div>
+
+    <div class="flows">
+      <article class="flow reveal">
+        <div class="fa"><span class="ft">실제 업무</span><h3>가격 · 프로모션 세팅</h3><p>행사 상품의 가격과 프로모션을 관리하고, 가격 설정과 프로모션 세팅을 맡았습니다.</p></div>
+        <div class="fb"><span class="ft">느낀 점</span><p>채널마다 같은 상품의 가격 · 프로모션을 따로 세팅해야 해서 반복 작업에 시간이 많이 들었습니다.</p></div>
+        <div class="fc"><span class="ft">REBOOT · 브랜드 사이트</span><p>문장 하나로 팝업 · 할인 초안을 만들고, 날짜 · 가격 · 광고 문구를 검사한 뒤 관리자가 확인해 저장</p></div>
+      </article>
+      <article class="flow reveal">
+        <div class="fa"><span class="ft">실제 업무</span><h3>매출 · 할인율 분석</h3><p>상품별 매출과 할인율을 분석하고 딜을 운영했습니다.</p></div>
+        <div class="fb"><span class="ft">느낀 점</span><p>상품별 매출과 할인율을 매번 따로 모아 정리해야 했습니다.</p></div>
+        <div class="fc"><span class="ft">REBOOT · 마케팅 대시보드(팀)</span><p>채널별 광고비 · 매출 · ROAS · CPA 자동 계산, 주간 성과 보고서 PDF 출력</p></div>
+      </article>
+      <article class="flow reveal">
+        <div class="fa"><span class="ft">실제 업무</span><h3>수익성 검토</h3><p>원가와 판매가를 분석하고, 판매가를 시장 최저가와 비교해 예상 수익률을 산출했습니다.</p></div>
+        <div class="fb"><span class="ft">판단 기준</span><p>가격 경쟁력뿐 아니라 <b>원가 구조와 판매 비용</b>까지 함께 봐야 실질 수익성을 판단할 수 있다는 점을 배웠습니다.</p></div>
+        <div class="fc"><span class="ft">REBOOT · 브랜드 사이트 / 대시보드(팀)</span><p>크리에이터 링크 정산에 할인율 · 수수료율 반영, 대시보드에서 경쟁 제품 가격 · 리뷰 수집</p></div>
+      </article>
+      <article class="flow reveal">
+        <div class="fa"><span class="ft">실제 업무</span><h3>상품 등록 · 실적 관리</h3><p>자사몰 · 네이버 · 무신사 등 온라인 채널에 상품을 등록하고 판매 실적을 관리했습니다.</p></div>
+        <div class="fb"><span class="ft">느낀 점</span><p>매일 여러 채널을 돌며 현황을 확인해야 했습니다.</p></div>
+        <div class="fc"><span class="ft">REBOOT · 마케팅 대시보드(팀)</span><p>이번 주 매출 · 오늘 할 일 · 시즌 D-day를 한 화면에 모은 데일리 브리핑</p></div>
+      </article>
+    </div>
+
+    <article class="dark-card insight reveal">
+      <p class="dc-head">플랫폼 분석 발표 <b aria-hidden="true">✓</b></p>
+      <h3>자회사 패션 플랫폼 ‘굿웨어몰’ 성장 방향 제안</h3>
+      <p>인턴 기간에 다른 패션 플랫폼의 <b>상품 구성 · 화면 배치 · 카테고리 분류 · 프로모션 방식</b>을 비교 · 분석했습니다. 핵심 상품과 프로모션이 한눈에 보이는 화면 구성과, 구매 이력 · 관심 상품을 활용한 맞춤 추천을 개선 방향으로 제안했습니다.</p>
+      <p class="insight-role">맡은 일 · 경쟁 플랫폼 분석 자료 정리, 개선 방향 정리, 발표 자료 구성</p>
+    </article>
+  </div>
+</section>
+
 <!-- ============ RESUME ============ -->
 <section class="sec resume" id="resume">
   <div class="wrap">
@@ -465,6 +483,31 @@
         <div><p>AI · 콘텐츠</p><span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>Higgsfield</span><span>Canva</span></div>
         <div><p>자동화</p><span>Make · n8n (학습 중)</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM WORKFLOW (프로젝트 진행 방식 · REBOOT 기준) ============ -->
+<section class="sec workflow" id="workflow">
+  <div class="wrap">
+    <div class="wf-top">
+      <h2 class="big-blue reveal">역할과 규칙 먼저,<br>개발은 그다음.</h2>
+      <ul class="gray-card reveal">
+        <li>PM으로서 역할 분담 · 브랜치 · 충돌 방지 규칙을 README에 먼저 정리했습니다.</li>
+        <li>한 PR에는 한 파트만, 각자 자기 폴더만 수정해 충돌을 줄였습니다.</li>
+        <li>AI가 만든 결과물은 사람이 확인한 뒤에 반영했습니다.</li>
+      </ul>
+    </div>
+    <p class="wf-cap reveal">Team Workflow <small>REBOOT 팀 프로젝트 기준</small></p>
+    <div class="wf-panel reveal">
+      <ol class="wf-steps">
+        <li><span class="circle">01<b>Define</b></span><h3>문제 정의</h3><p>시장 타당성 분석으로 페인포인트 3가지 정리</p></li>
+        <li><span class="circle">02<b>Rules</b></span><h3>역할 · 규칙 정하기</h3><p>README에 역할 분담 · 브랜치 · 병합 순서 기록</p></li>
+        <li><span class="circle">03<b>Build</b></span><h3>파트별 개발</h3><p><code>feature/이니셜-기능명</code> 브랜치에서 자기 폴더만 수정</p></li>
+        <li><span class="circle">04<b>Review</b></span><h3>PR · 병합</h3><p><code>dev</code>로 PR → 확인 후 <code>main</code>에 병합</p></li>
+        <li><span class="circle">05<b>Ship</b></span><h3>배포 · 측정</h3><p><code>main</code>만 배포, 같은 과제로 전 · 후 실측</p></li>
+      </ol>
+      <p class="wf-note">1차 프로젝트 ForwardUs에서 업무 분담이 흐렸던 경험을 바탕으로, 2차 프로젝트 REBOOT에서 이 흐름을 먼저 정하고 시작했습니다.</p>
     </div>
   </div>
 </section>
