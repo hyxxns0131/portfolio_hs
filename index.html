@@ -11,25 +11,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<a class="skip" href="#intern">본문 바로가기</a>
+<a class="skip" href="#about">본문 바로가기</a>
 
-<!-- ============ HEADER ============ -->
+<!-- ============ HEADER (슬라이드 머리글 스타일) ============ -->
 <header class="header" id="header">
   <div class="wrap header-in">
-    <a class="logo" href="#top">강현서<span>.</span><small>PORTFOLIO</small></a>
+    <a class="logo" href="#top">PORTFOLIO</a>
+    <span class="h-role">ONLINE MD · 강현서</span>
     <nav class="gnb" id="gnb" aria-label="섹션 이동">
+      <a href="#about">소개</a>
       <a href="#intern">인턴</a>
-      <a href="#reboot">REBOOT</a>
-      <a href="#projects">프로젝트</a>
+      <a href="#work">프로젝트</a>
       <a href="#resume">이력</a>
-      <a href="#contact" class="gnb-contact">연락하기</a>
+      <a href="#contact">연락</a>
     </nav>
-    <a class="header-cta" href="#contact">연락하기</a>
+    <span class="h-year" aria-hidden="true">20(26)</span>
     <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="gnb">
       <span class="menu-ico" aria-hidden="true"><i></i><i></i></span><span class="menu-txt">메뉴</span>
     </button>
@@ -38,271 +39,404 @@
 
 <main id="main">
 
-<!-- ============ ① HERO ============ -->
-<section class="hero dark" id="top">
-  <canvas class="stars" aria-hidden="true"></canvas>
-  <div class="wrap hero-grid">
-    <div class="hero-in">
-      <p class="hero-kicker">Hyeonseo Kang · <i>Portfolio</i></p>
-      <p class="hero-role">온라인 MD · 이커머스 운영 신입 지원</p>
-      <h1 class="hero-title">온라인 MD 인턴 경험을 바탕으로, <em>상품 운영과 매출 분석</em>의 반복 업무를 줄이는 <b>강현서</b>입니다.</h1>
-      <ul class="hero-meta">
-        <li>신성통상 온라인 MD 인턴</li>
-        <li>매출·할인율 분석</li>
-        <li>업무 자동화 프로젝트 PM</li>
-      </ul>
-      <p class="hero-ax"><b>AX</b>(AI Transformation)는 반복되는 일에 AI와 자동화를 붙여 일하는 방식을 바꾸는 것을 말합니다. 무역 AX 마스터 2기 과정에서 인턴 때 손으로 하던 일을 기준으로 직접 만들어 봤습니다.</p>
-      <div class="hero-btns">
-        <a class="btn-pill" href="#intern">인턴 경험 보기</a>
-        <a class="btn-pill line" href="#reboot">대표 프로젝트 보기</a>
+<!-- ============ COVER ============ -->
+<section class="cover" id="top">
+  <div class="wrap cover-in">
+    <h1 class="cover-word" aria-label="강현서 포트폴리오">Portfolio</h1>
+
+    <!-- 파란 폴더 일러스트 -->
+    <div class="cover-folder" aria-hidden="true">
+      <span class="cf-back"></span>
+      <span class="cf-paper"></span>
+      <span class="cf-front"></span>
+      <!-- 작은 3D 아바타 (assets/3d/hyeonseo-wave.glb) -->
+      <div class="avatar">
+        <model-viewer class="char3d" src="assets/3d/hyeonseo-wave.glb" animation-name="Armature|Wave_One_Hand|baselayer"
+          alt="" autoplay disable-zoom disable-pan disable-tap interaction-prompt="none" tabindex="-1"
+          camera-orbit="0deg 82deg auto" field-of-view="26deg" shadow-intensity="0" exposure="1.05"
+          environment-image="neutral" loading="eager"></model-viewer>
       </div>
     </div>
-    <!-- 3D 캐릭터: assets/3d/hyeonseo-wave.glb (Higgsfield · Meshy 7, 손 흔들기 동작) -->
-    <div class="hero-char" aria-hidden="true">
-      <model-viewer class="char3d" src="assets/3d/hyeonseo-wave.glb" animation-name="Armature|Wave_One_Hand|baselayer"
-        alt="" autoplay camera-controls disable-zoom disable-pan interaction-prompt="none" tabindex="-1"
-        camera-orbit="0deg 82deg auto" field-of-view="26deg" shadow-intensity="0.6" shadow-softness="1"
-        exposure="1.05" environment-image="neutral" loading="eager"></model-viewer>
+
+    <div class="chip-card ed-card" aria-hidden="true">
+      <span>2026 Edition</span>
+      <i class="ed-ico">@ ▣</i>
+      <i class="ed-send">➤</i>
+    </div>
+
+    <div class="cover-name">
+      <p class="cn-big">강현서<br><span>HYEONSEO KANG</span></p>
+      <p class="cn-role">온라인 MD · 이커머스 운영 신입</p>
+    </div>
+
+    <ul class="chip-card skill-card">
+      <li><span class="sk-ico" aria-hidden="true">▸</span>상품 · 가격 · 프로모션 운영 <b aria-hidden="true">✓</b></li>
+      <li><span class="sk-ico" aria-hidden="true">▸</span>매출 · 할인율 분석</li>
+      <li><span class="sk-ico" aria-hidden="true">▸</span>업무 자동화 프로젝트 PM</li>
+    </ul>
+
+    <p class="cover-tag">반복 업무를 줄이는<br>온라인 MD</p>
+
+    <div class="cover-btns">
+      <a class="btn" href="#intern">인턴 경험 보기</a>
+      <a class="btn line" href="#work">프로젝트 폴더 열기</a>
     </div>
   </div>
 </section>
 
-<!-- ============ LOOKBOOK MARQUEE ============ -->
-<div class="lookbook" aria-hidden="true">
-  <div class="lb-track">
-    <span>Hyeonseo Portfolio</span><i>✦</i><span>Hyeonseo Portfolio</span><i>✦</i><span>Hyeonseo Portfolio</span><i>✦</i><span>Hyeonseo Portfolio</span><i>✦</i><span>Hyeonseo Portfolio</span><i>✦</i><span>Hyeonseo Portfolio</span><i>✦</i><span>Hyeonseo Portfolio</span><i>✦</i><span>Hyeonseo Portfolio</span><i>✦</i>
-  </div>
-</div>
-
-<!-- ============ ② INTERN ============ -->
-<section class="intern sec" id="intern">
+<!-- ============ ABOUT (폴더 패널) ============ -->
+<section class="sec" id="about">
   <div class="wrap">
-    <div class="sec-top reveal">
-      <p class="label">Internship · Online MD</p>
+    <div class="folder reveal">
+      <div class="f-tabs" aria-hidden="true">
+        <span class="t1">INTRODUCTION →</span><span class="t2">MY EXPERTISE →</span><span class="t3">MY WORKFLOW →</span>
+      </div>
+      <div class="f-body about">
+        <!-- 얼굴 사진 칸: assets/img/me.jpg 파일을 넣으면 자동으로 보입니다 -->
+        <figure class="win photo-slot">
+          <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="photo-box">
+            <img src="assets/img/me.jpg" alt="강현서 프로필 사진" id="mePhoto" hidden>
+            <div class="photo-empty" id="photoEmpty">
+              <span class="pe-ico" aria-hidden="true">◎</span>
+              <span>프로필 사진 자리</span>
+              <small>assets/img/me.jpg</small>
+            </div>
+          </div>
+        </figure>
+        <div class="about-txt">
+          <div class="about-top">
+            <p class="hi">안녕하세요, 강현서입니다</p>
+            <p class="about-h">About Me</p>
+          </div>
+          <h2>온라인 MD 인턴 경험을 바탕으로, <b>상품 운영과 매출 분석의 반복 업무</b>를 줄이는 강현서입니다.</h2>
+          <p>신성통상 온라인 MD 인턴으로 가격 · 프로모션 세팅과 매출 · 할인율 분석을 했습니다. 이후 무역 AX 마스터 과정에서 그때 손으로 하던 일을 기준으로, AI와 자동화로 반복을 줄이는 도구를 팀과 함께 만들었습니다.</p>
+          <p class="ax-note"><b>AX</b>(AI Transformation) — 반복되는 일에 AI와 자동화를 붙여 일하는 방식을 바꾸는 것</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW ============ -->
+<section class="sec workflow" id="workflow">
+  <div class="wrap">
+    <div class="wf-top">
+      <h2 class="big-blue reveal">문제 먼저,<br>도구는 그다음.</h2>
+      <ul class="gray-card reveal">
+        <li>현장에서 반복되는 일과 불편을 먼저 적습니다.</li>
+        <li>무엇을 줄일지, 어떤 기준으로 판단할지 정합니다.</li>
+        <li>만든 뒤에는 전과 후를 같은 과제로 비교합니다.</li>
+      </ul>
+    </div>
+    <p class="wf-cap reveal">My Workflow</p>
+    <div class="wf-panel reveal">
+      <ol class="wf-steps">
+        <li><span class="circle">01<b>Pain Point</b></span><h3>문제 찾기</h3><p>반복 업무 · 불편 · 리스크를 목록으로</p></li>
+        <li><span class="circle">02<b>Criteria</b></span><h3>기준 세우기</h3><p>줄일 일과 판단 기준, 역할 · 규칙 정리</p></li>
+        <li><span class="circle">03<b>Build</b></span><h3>만들기</h3><p>AI는 초안, 사람은 확인 · 결정</p></li>
+        <li><span class="circle">04<b>Measure</b></span><h3>측정 · 개선</h3><p>같은 과제로 전 · 후 비교</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTERN ============ -->
+<section class="sec intern" id="intern">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">MY EXPERIENCE</p>
       <h2>신성통상 <span class="blue">온라인 MD 인턴</span></h2>
       <p class="sec-meta">E-MD2팀 · 2025.03 – 2025.06 · 산학 인턴(IPP) · 자사몰 · 네이버 · 무신사</p>
     </div>
 
     <div class="flow-legend reveal" aria-hidden="true">
-      <span class="lg-work">실제 업무</span><span class="lg-arrow">→</span><span class="lg-learn">판단 기준 · 느낀 점</span><span class="lg-arrow">→</span><span class="lg-proj">교육 프로젝트에서 구현한 기능</span>
+      <span class="lg-a">실제 업무</span><i>→</i><span class="lg-b">느낀 점 · 판단 기준</span><i>→</i><span class="lg-c">교육 프로젝트에서 구현</span>
     </div>
 
     <div class="flows">
       <article class="flow reveal">
-        <div class="f-work"><span class="f-tag">실제 업무</span><h3>가격 · 프로모션 세팅</h3><p>행사 상품의 가격과 프로모션을 관리하고, 가격 설정과 프로모션 세팅을 맡았습니다.</p></div>
-        <div class="f-learn"><span class="f-tag">판단 기준 · 느낀 점</span><p>채널마다 같은 상품의 가격·프로모션을 따로 세팅해야 해서, 반복 작업에 시간이 많이 들었습니다.</p></div>
-        <div class="f-proj"><span class="f-tag">REBOOT · 브랜드 사이트</span><p>문장 하나로 팝업·할인 초안을 만들고, 날짜·가격·광고 문구를 검사한 뒤 관리자가 확인해 저장하도록 구현</p></div>
+        <div class="fa"><span class="ft">실제 업무</span><h3>가격 · 프로모션 세팅</h3><p>행사 상품의 가격과 프로모션을 관리하고, 가격 설정과 프로모션 세팅을 맡았습니다.</p></div>
+        <div class="fb"><span class="ft">느낀 점</span><p>채널마다 같은 상품의 가격 · 프로모션을 따로 세팅해야 해서 반복 작업에 시간이 많이 들었습니다.</p></div>
+        <div class="fc"><span class="ft">REBOOT · 브랜드 사이트</span><p>문장 하나로 팝업 · 할인 초안을 만들고, 날짜 · 가격 · 광고 문구를 검사한 뒤 관리자가 확인해 저장</p></div>
       </article>
       <article class="flow reveal">
-        <div class="f-work"><span class="f-tag">실제 업무</span><h3>매출 · 할인율 분석</h3><p>상품별 매출과 할인율을 분석하고 딜을 운영했습니다.</p></div>
-        <div class="f-learn"><span class="f-tag">판단 기준 · 느낀 점</span><p>상품별 매출과 할인율을 매번 따로 모아 정리해야 했습니다.</p></div>
-        <div class="f-proj"><span class="f-tag">REBOOT · 마케팅 대시보드(팀)</span><p>채널별 광고비·매출·ROAS·CPA를 자동으로 계산하고, 주간 성과 보고서를 PDF로 출력</p></div>
+        <div class="fa"><span class="ft">실제 업무</span><h3>매출 · 할인율 분석</h3><p>상품별 매출과 할인율을 분석하고 딜을 운영했습니다.</p></div>
+        <div class="fb"><span class="ft">느낀 점</span><p>상품별 매출과 할인율을 매번 따로 모아 정리해야 했습니다.</p></div>
+        <div class="fc"><span class="ft">REBOOT · 마케팅 대시보드(팀)</span><p>채널별 광고비 · 매출 · ROAS · CPA 자동 계산, 주간 성과 보고서 PDF 출력</p></div>
       </article>
       <article class="flow reveal">
-        <div class="f-work"><span class="f-tag">실제 업무</span><h3>수익성 검토</h3><p>원가와 판매가를 분석하고, 판매가를 시장 최저가와 비교해 예상 수익률을 산출했습니다.</p></div>
-        <div class="f-learn"><span class="f-tag">판단 기준 · 느낀 점</span><p>가격 경쟁력뿐 아니라 <b>원가 구조와 판매 비용</b>까지 함께 봐야 실질 수익성을 판단할 수 있다는 점을 배웠습니다.</p></div>
-        <div class="f-proj"><span class="f-tag">REBOOT · 브랜드 사이트 / 대시보드(팀)</span><p>크리에이터 링크 정산에 할인율·수수료율을 반영하고, 대시보드에서 경쟁 제품의 가격·리뷰를 수집</p></div>
+        <div class="fa"><span class="ft">실제 업무</span><h3>수익성 검토</h3><p>원가와 판매가를 분석하고, 판매가를 시장 최저가와 비교해 예상 수익률을 산출했습니다.</p></div>
+        <div class="fb"><span class="ft">판단 기준</span><p>가격 경쟁력뿐 아니라 <b>원가 구조와 판매 비용</b>까지 함께 봐야 실질 수익성을 판단할 수 있다는 점을 배웠습니다.</p></div>
+        <div class="fc"><span class="ft">REBOOT · 브랜드 사이트 / 대시보드(팀)</span><p>크리에이터 링크 정산에 할인율 · 수수료율 반영, 대시보드에서 경쟁 제품 가격 · 리뷰 수집</p></div>
       </article>
       <article class="flow reveal">
-        <div class="f-work"><span class="f-tag">실제 업무</span><h3>상품 등록 · 실적 관리</h3><p>자사몰 · 네이버 · 무신사 등 온라인 채널에 상품을 등록하고 판매 실적을 관리했습니다.</p></div>
-        <div class="f-learn"><span class="f-tag">판단 기준 · 느낀 점</span><p>매일 여러 채널을 돌며 현황을 확인해야 했습니다.</p></div>
-        <div class="f-proj"><span class="f-tag">REBOOT · 마케팅 대시보드(팀)</span><p>이번 주 매출 · 오늘 할 일 · 시즌 D-day를 한 화면에 모은 데일리 브리핑</p></div>
+        <div class="fa"><span class="ft">실제 업무</span><h3>상품 등록 · 실적 관리</h3><p>자사몰 · 네이버 · 무신사 등 온라인 채널에 상품을 등록하고 판매 실적을 관리했습니다.</p></div>
+        <div class="fb"><span class="ft">느낀 점</span><p>매일 여러 채널을 돌며 현황을 확인해야 했습니다.</p></div>
+        <div class="fc"><span class="ft">REBOOT · 마케팅 대시보드(팀)</span><p>이번 주 매출 · 오늘 할 일 · 시즌 D-day를 한 화면에 모은 데일리 브리핑</p></div>
       </article>
     </div>
 
-    <article class="insight reveal">
-      <p class="label">Industry · 플랫폼 분석</p>
-      <h3>자회사 패션 플랫폼 ‘굿웨어몰’ 성장 방향 제안 발표</h3>
-      <p>인턴 기간에 다른 패션 플랫폼의 <b>상품 구성 · 화면 배치 · 카테고리 분류 · 프로모션 방식</b>을 비교·분석했습니다. 핵심 상품과 프로모션이 한눈에 보이는 화면 구성과, 구매 이력·관심 상품을 활용한 맞춤 추천을 개선 방향으로 제안했습니다.</p>
+    <article class="dark-card insight reveal">
+      <p class="dc-head">플랫폼 분석 발표 <b aria-hidden="true">✓</b></p>
+      <h3>자회사 패션 플랫폼 ‘굿웨어몰’ 성장 방향 제안</h3>
+      <p>인턴 기간에 다른 패션 플랫폼의 <b>상품 구성 · 화면 배치 · 카테고리 분류 · 프로모션 방식</b>을 비교 · 분석했습니다. 핵심 상품과 프로모션이 한눈에 보이는 화면 구성과, 구매 이력 · 관심 상품을 활용한 맞춤 추천을 개선 방향으로 제안했습니다.</p>
       <p class="insight-role">맡은 일 · 경쟁 플랫폼 분석 자료 정리, 개선 방향 정리, 발표 자료 구성</p>
     </article>
   </div>
 </section>
 
-<!-- ============ ③ REBOOT ============ -->
-<section class="reboot dark sec" id="reboot">
+<!-- ============ PROJECT FOLDER (탭 3개) ============ -->
+<section class="sec work" id="work">
   <div class="wrap">
-    <div class="rb-head reveal">
-      <p class="label light">Featured Project</p>
-      <h2 class="rb-title">REBOOT</h2>
-      <p class="rb-lead">한국 숙취해소제 브랜드의 미국 진출을 가정해, 마케터 한 명이 여러 채널을 운영할 수 있도록 <b>브랜드 사이트와 마케팅 대시보드</b>를 만든 팀 프로젝트입니다.</p>
+    <div class="sec-head reveal">
+      <p class="eyebrow">PROJECT FOLDER</p>
+      <h2>폴더를 눌러 <span class="blue">프로젝트</span>를 열어 보세요</h2>
+      <p class="sec-meta">각 프로젝트는 페인포인트 → 과정 → 결과 순서로 정리했습니다.</p>
     </div>
 
-    <dl class="rb-summary reveal">
-      <div><dt>목적</dt><dd>규제 · 인지도 · 운영 인력 문제를 가진 브랜드의 미국 온라인 판매와 마케팅 운영을 돕는 도구 제작</dd></div>
-      <div><dt>기간</dt><dd>2026.10 · 무역 AX 마스터 2기 팀 프로젝트<br><small>과정 내 팀 프로젝트 1위</small></dd></div>
-      <div><dt>팀 규모</dt><dd>6명</dd></div>
-      <div><dt>본인 역할</dt><dd>PM · 브랜드 사이트(공식 홈페이지) 기획 · 개발 · 배포</dd></div>
-    </dl>
-    <p class="notice reveal"><b>안내</b> REBOOT는 실제 기업 알디콤을 모티브로 팀이 제안한 <b>가상 브랜드</b>이며, 화면 속 주문 · 매출은 <b>시연용 데이터</b>입니다.</p>
+    <div class="pfolder reveal">
+      <div class="pf-tabs" role="tablist" aria-label="프로젝트 폴더">
+        <button type="button" role="tab" id="tab-reboot" aria-controls="panel-reboot" aria-selected="true" data-hash="reboot"><small>01 · 팀 · 1위</small>REBOOT</button>
+        <button type="button" role="tab" id="tab-forwardus" aria-controls="panel-forwardus" aria-selected="false" tabindex="-1" data-hash="forwardus"><small>02 · 팀</small>ForwardUs</button>
+        <button type="button" role="tab" id="tab-personal" aria-controls="panel-personal" aria-selected="false" tabindex="-1" data-hash="personal"><small>03 · 개인</small>개인 포트폴리오</button>
+      </div>
 
-    <!-- 문제 → 해결 -->
-    <div class="ps">
-      <h3 class="sub-h reveal">문제와 해결</h3>
-      <div class="ps-rows">
-        <article class="ps-row reveal">
-          <div class="ps-p"><span>문제 01 · 규제 표현</span><h4>효능을 말하기 어려운 시장</h4><p>미국 FDA는 숙취 ‘예방 · 치료 · 완화’ 같은 표현을 문제 삼습니다. 팀 조사에서 2020년 숙취 제품 경고장 7건을 확인했습니다.</p></div>
-          <i class="ps-arrow" aria-hidden="true"></i>
-          <div class="ps-s"><span>해결 · 광고 문구 점검</span><p>경고장의 문제 표현 53개를 규칙 13개로 정리해 상세페이지 · 챗봇 답변 · 광고 문구를 1차 점검합니다. <small>법적 적합성을 보장하는 기능이 아니며, 최종 판단은 담당자가 합니다.</small></p></div>
-        </article>
-        <article class="ps-row reveal">
-          <div class="ps-p"><span>문제 02 · 낮은 인지도</span><h4>좁은 판매 접점</h4><p>Weee! · Yamibuy 같은 아시아계 채널 위주라 일반 미국 소비자에게 브랜드와 카테고리가 낯섭니다.</p></div>
-          <i class="ps-arrow" aria-hidden="true"></i>
-          <div class="ps-s"><span>해결 · 브랜드 사이트 · 크리에이터 링크</span><p>효능 대신 맛과 포맷을 내세운 브랜드 사이트와 자사몰. 크리에이터별 전용 링크 · 할인코드로 SNS 유입부터 주문까지 추적합니다.</p></div>
-        </article>
-        <article class="ps-row reveal">
-          <div class="ps-p"><span>문제 03 · 운영 인력 부족</span><h4>1명이 5개 채널 운영</h4><p>해외 담당자 한 명이 Amazon · Weee! · Yamibuy · TikTok · Instagram을 맡아 카피 작성 · 규제 확인 · 채널별 재작성에 시간이 몰립니다.</p></div>
-          <i class="ps-arrow" aria-hidden="true"></i>
-          <div class="ps-s"><span>해결 · 마케팅 대시보드</span><p>하루 업무 순서대로 메뉴 8개 — 현황 확인 · 콘텐츠 제작 · 광고 문구 심의 · 인플루언서 · 고객 응대 · 성과 분석을 한곳에서.</p></div>
-        </article>
-      </div>
-      <p class="src reveal">문제 정의 출처: 팀 「미국 숙취해소제 시장 타당성 분석」</p>
-    </div>
-
-    <!-- 기여 구분 -->
-    <div class="contrib reveal">
-      <div class="c-me">
-        <h3>제가 맡은 일</h3>
-        <ul>
-          <li><b>PM</b>역할 분담 · 브랜치 · 충돌 방지 규칙을 README에 먼저 정리하고 개발을 시작</li>
-          <li><b>브랜드 사이트 개발 · 배포</b>자사몰 · 크리에이터 링크 · 관리자 화면 · 챗봇</li>
-          <li><b>AI 사용 기준</b>챗봇 페르소나와 금지어, AI 초안을 관리자가 확인한 뒤 저장하는 절차</li>
-        </ul>
-      </div>
-      <div class="c-team">
-        <h3>팀 전체 결과물</h3>
-        <ul>
-          <li>마케팅 담당자 대시보드(메뉴 8개)</li>
-          <li>브랜드 사이트와 대시보드를 잇는 데이터 API</li>
-          <li>미국 시장 타당성 분석 · 리브랜딩</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 결과와 측정 범위 -->
-    <div class="results">
-      <h3 class="sub-h reveal">결과와 측정 범위 <small>팀 전체 결과</small></h3>
-      <div class="res-grid">
-        <article class="res res-main reveal">
-          <p class="res-k">작업시간 절감</p>
-          <ul class="res-nums">
-            <li><b>−64.7%</b><span>카드뉴스 제작시간</span></li>
-            <li><b>−52.8%</b><span>이미지 제작시간</span></li>
-            <li><b>−77.8%</b><span>광고 문구 1차 검토시간</span></li>
-          </ul>
-          <p class="res-scope">측정 범위 · 마케터 1명이 같은 과제를 비교한 실측</p>
-        </article>
-        <article class="res reveal">
-          <p class="res-k">운영량</p>
-          <p class="res-big">91<small>개</small></p>
-          <p class="res-scope">5일간 SNS 게시물 수</p>
-        </article>
-        <article class="res reveal">
-          <p class="res-k">콘텐츠 반응</p>
-          <p class="res-big">4,961<small>회</small></p>
-          <p class="res-scope">프로젝트 계정 릴스 누적 조회 · 매출 성과가 아닌 반응 지표</p>
-        </article>
-        <article class="res res-demo reveal">
-          <p class="res-k">시연용 주문 · 매출</p>
-          <p class="res-scope">화면 속 주문 · 매출은 시연용 데이터로, 성과로 집계하지 않습니다.</p>
-        </article>
-      </div>
-    </div>
-
-    <!-- 실제 화면 -->
-    <div class="screens">
-      <h3 class="sub-h reveal">실제 화면 <small>눌러서 크게 보기</small></h3>
-      <p class="notice small reveal">가상 브랜드 · 주문과 매출은 시연용 데이터</p>
-      <div class="gallery" data-gallery="reboot">
-        <figure class="g-item reveal"><button type="button" class="g-btn" data-title="브랜드 사이트 · 메인" data-desc="효능 대신 맛과 포맷(젤리 · 드링크)을 앞세운 첫 화면과 오른쪽 아래 챗봇 버튼을 확인할 수 있습니다."><img src="assets/img/hp-hero.jpg" width="1200" height="750" alt="REBOOT 브랜드 사이트 메인 화면" loading="lazy"></button><figcaption><b>브랜드 사이트 · 메인</b>맛과 포맷 중심의 첫 화면</figcaption></figure>
-        <figure class="g-item reveal"><button type="button" class="g-btn" data-title="브랜드 사이트 · 상품 상세" data-desc="옵션 선택 · 수량 · 장바구니 흐름과 ‘실제 결제 없음(Mock checkout)’ 안내를 확인할 수 있습니다."><img src="assets/img/hp-product.jpg" width="1200" height="750" alt="브랜드 사이트 상품 상세 화면" loading="lazy"></button><figcaption><b>브랜드 사이트 · 상품 상세</b>옵션 · 수량 · 장바구니</figcaption></figure>
-        <figure class="g-item reveal"><button type="button" class="g-btn" data-title="관리자 · 크리에이터 코드와 링크" data-desc="크리에이터 이름 · 플랫폼 · 할인율 · 수수료율을 넣어 전용 링크와 할인코드를 발급하는 화면입니다. 목록의 크리에이터는 가상 데이터입니다."><img src="assets/img/hp-admin-creator.jpg" width="1200" height="750" alt="크리에이터 코드와 링크 발급 관리자 화면" loading="lazy"></button><figcaption><b>관리자 · 크리에이터 링크</b>할인율 · 수수료율 설정과 링크 발급</figcaption></figure>
-        <figure class="g-item reveal"><button type="button" class="g-btn" data-title="관리자 · 매출 현황" data-desc="기간 · 주문 상태별 주문 수 · 판매 수량 · 순매출 · 크리에이터 링크 경유 비중과 CSV 내보내기를 확인할 수 있습니다. 모든 값은 시연용 데이터입니다."><img src="assets/img/hp-admin-sales.jpg" width="1200" height="750" alt="관리자 매출 현황 화면" loading="lazy"></button><figcaption><b>관리자 · 매출 현황</b>시연용 데이터 · CSV 내보내기</figcaption></figure>
-        <figure class="g-item reveal"><button type="button" class="g-btn" data-title="관리자 · 챗봇 질문 분석" data-desc="방문자 질문을 주제별로 모으고, 다시 쓴 답변 수와 막은 답변 수를 확인하는 화면입니다. 연락처 정보는 가려서 저장합니다."><img src="assets/img/hp-admin-chatbot.jpg" width="1200" height="750" alt="챗봇 질문 분석 관리자 화면" loading="lazy"></button><figcaption><b>관리자 · 챗봇 질문 분석</b>질문 주제 · 다시 쓴 답변 · 막은 답변</figcaption></figure>
-        <figure class="g-item reveal"><button type="button" class="g-btn" data-title="대시보드(팀) · 홈 데일리 브리핑" data-desc="오늘 할 일 · 다가오는 시즌 D-day · 이번 주 매출 · 최근 활동을 한 화면에 모은 첫 화면입니다."><img src="assets/img/db-home.jpg" width="1200" height="750" alt="마케팅 대시보드 홈 데일리 브리핑 화면" loading="lazy"></button><figcaption><b>대시보드(팀) · 홈</b>오늘 할 일 · 시즌 D-day</figcaption></figure>
-        <figure class="g-item reveal"><button type="button" class="g-btn" data-title="대시보드(팀) · 성과 분석" data-desc="기간별 광고비 · 매출 · ROAS · 전환수 · CPA · 순수익과 채널별 표, 보고서 만들기 버튼을 확인할 수 있습니다. 값은 시연용 데이터입니다."><img src="assets/img/db-performance.jpg" width="1200" height="750" alt="마케팅 대시보드 성과 분석 화면" loading="lazy"></button><figcaption><b>대시보드(팀) · 성과 분석</b>ROAS · CPA · 순수익 자동 계산</figcaption></figure>
-        <figure class="g-item reveal"><button type="button" class="g-btn" data-title="대시보드(팀) · 광고 문구 심의" data-desc="문구를 넣으면 쓰면 안 되는 표현과 이유, 바꿔 쓸 표현을 보여 주는 1차 점검 화면입니다. 법적 검토를 대신하지 않습니다."><img src="assets/img/db-compliance.jpg" width="1200" height="750" alt="마케팅 대시보드 광고 문구 심의 화면" loading="lazy"></button><figcaption><b>대시보드(팀) · 광고 문구 심의</b>문제 표현과 대체 표현 제시</figcaption></figure>
-        <figure class="g-item reveal"><button type="button" class="g-btn" data-title="대시보드(팀) · 인플루언서 · 파트너" data-desc="파트너 후보 목록을 구분 · 카테고리로 거르고, 선택한 업체에 보낼 제안서를 작성하는 화면입니다."><img src="assets/img/db-partner.jpg" width="1200" height="750" alt="마케팅 대시보드 파트너 찾기 화면" loading="lazy"></button><figcaption><b>대시보드(팀) · 파트너 찾기</b>후보 필터 · 제안서 작성</figcaption></figure>
-      </div>
-      <div class="links reveal">
-        <a class="btn-pill line" href="https://reboot-us.onrender.com/" target="_blank" rel="noopener noreferrer">브랜드 사이트 시연 열기 <span aria-hidden="true">↗</span><span class="sr">(새 창)</span></a>
-        <a class="btn-pill line" href="https://github.com/hyxxns0131/reboot_home" target="_blank" rel="noopener noreferrer">브랜드 사이트 GitHub <span aria-hidden="true">↗</span><span class="sr">(새 창)</span></a>
-      </div>
-      <p class="links-note reveal">시연 사이트는 무료 서버라 첫 접속에 30초~1분 정도 걸릴 수 있습니다.</p>
-    </div>
-
-    <!-- 펼쳐 보기 -->
-    <div class="more-info">
-      <details class="acc reveal">
-        <summary>현업 도입을 고려해 안전장치를 설계했습니다</summary>
-        <ul class="acc-grid">
-          <li><b>AI는 초안만</b>저장은 관리자 확인 후</li>
-          <li><b>개인정보 가림</b>이메일 · 전화번호 마스킹</li>
-          <li><b>권한 확인</b>시스템 간 API는 토큰 인증</li>
-          <li><b>비밀정보 분리</b>API 키는 별도 설정 파일(.env)</li>
-          <li><b>비용 통제</b>견적 확인 후 생성 · 10분당 40건 제한</li>
-          <li><b>업로드 검증</b>JPG · PNG · WEBP만 허용</li>
-        </ul>
-      </details>
-      <details class="acc reveal">
-        <summary>협업 방식 상세 · Git 규칙과 문서화</summary>
-        <div class="acc-body">
-          <ul class="git-rules">
-            <li><b>브랜치 전략</b><code>feature/이니셜-기능명</code> → <code>dev</code>로 PR → 확인 후 <code>main</code> 병합. 서버는 <code>main</code>만 배포</li>
-            <li><b>충돌 방지</b>파트별 폴더 · DB 테이블 · CSS 클래스에 접두사, 자기 폴더만 수정, 공통 파일은 PR에 [공통] 표시</li>
-            <li><b>한 PR = 한 파트</b>파트 간 의존 순서(공통 → 모델 → 관리자)를 README에 정해 병합 순서를 맞춤</li>
-            <li><b>보안</b><code>.env</code> · DB 파일은 Git에서 제외하고 <code>.env.example</code>만 공유</li>
-            <li><b>두 저장소 연결</b>브랜드 사이트와 대시보드는 저장소를 나누고, 토큰 인증 API로만 데이터를 주고받음</li>
-          </ul>
-          <p class="acc-note">README 40개 장 · 자동 테스트 60개 · 브랜드 사이트 저장소 커밋 25회 · 병합 6회</p>
+      <!-- ===== 01 REBOOT ===== -->
+      <div class="pf-panel" role="tabpanel" id="panel-reboot" aria-labelledby="tab-reboot" tabindex="0">
+        <div class="pp-head">
+          <div>
+            <p class="pp-kicker">팀 프로젝트 · 무역 AX 마스터 2기 · 과정 내 1위</p>
+            <h3 class="pp-title">REBOOT</h3>
+            <p class="pp-lead">한국 숙취해소제 브랜드의 미국 진출을 가정해, 마케터 한 명이 여러 채널을 운영할 수 있도록 <b>브랜드 사이트와 마케팅 대시보드</b>를 만든 프로젝트입니다.</p>
+          </div>
+          <dl class="pp-meta">
+            <div><dt>기간</dt><dd>2026.10</dd></div>
+            <div><dt>팀</dt><dd>6명</dd></div>
+            <div><dt>본인 역할</dt><dd>PM · 브랜드 사이트 기획 · 개발 · 배포</dd></div>
+          </dl>
         </div>
-      </details>
-    </div>
-  </div>
-</section>
+        <p class="notice"><b>안내</b> 실제 기업 알디콤을 모티브로 팀이 제안한 <b>가상 브랜드</b>이며, 화면 속 주문 · 매출은 <b>시연용 데이터</b>입니다.</p>
 
-<!-- ============ ④ PROJECTS ============ -->
-<section class="projects sec" id="projects">
-  <div class="wrap">
-    <div class="sec-top reveal">
-      <p class="label">More Projects</p>
-      <h2>ForwardUs 및 기타 프로젝트</h2>
-    </div>
+        <h4 class="blk-h"><span>1</span>페인포인트</h4>
+        <div class="pains">
+          <article><p class="pn">PAIN 01 · 규제 표현</p><h5>효능을 말하기 어려운 시장</h5><p>미국 FDA는 숙취 ‘예방 · 치료 · 완화’ 같은 표현을 문제 삼습니다. 팀 조사에서 2020년 숙취 제품 경고장 7건을 확인했습니다.</p></article>
+          <article><p class="pn">PAIN 02 · 낮은 인지도</p><h5>좁은 판매 접점</h5><p>Weee! · Yamibuy 같은 아시아계 채널 위주라 일반 미국 소비자에게 브랜드와 카테고리가 낯섭니다.</p></article>
+          <article><p class="pn">PAIN 03 · 운영 인력 부족</p><h5>1명이 5개 채널 운영</h5><p>해외 담당자 한 명이 Amazon · Weee! · Yamibuy · TikTok · Instagram을 맡아 카피 작성 · 규제 확인 · 채널별 재작성에 시간이 몰립니다.</p></article>
+        </div>
+        <p class="src">문제 정의 출처: 팀 「미국 숙취해소제 시장 타당성 분석」</p>
 
-    <article class="fu reveal">
-      <figure class="fu-fig" data-gallery="fu">
-        <button type="button" class="g-btn" data-title="ForwardUs · 전체 대시보드" data-desc="계정 · 플랫폼의 모든 화물(Shipment)을 견적부터 도착까지 상태별로 모아 보고, 검색과 CSV 내려받기를 하는 화면입니다."><img src="assets/img/fu-12.jpg" width="1200" height="613" alt="ForwardUs 전체 대시보드 화면" loading="lazy"></button>
-        <figcaption>전체 대시보드 · 눌러서 크게 보기</figcaption>
-      </figure>
-      <div class="fu-body">
-        <p class="fu-tag">팀 프로젝트 · 2026.09.18 – 09.28 · 5명</p>
-        <h3>ForwardUs · 수출 서류 AI 매니저</h3>
-        <dl>
-          <div><dt>본인 역할</dt><dd>메인 챗봇 ‘AI 포포링’ 기획</dd></div>
-          <div><dt>결과물</dt><dd>Offer Sheet를 읽어 C/I · P/L 자동 작성 · 무역 상담 챗봇 · 운송 예상 견적 · HS Code 조회</dd></div>
-          <div><dt>도구</dt><dd>Streamlit · OpenAI · 관세청 UNI-PASS · 환율 API</dd></div>
-          <div><dt>배운 점</dt><dd>업무 분담이 흐렸던 경험을 바탕으로, REBOOT에서는 역할과 Git 규칙을 먼저 정했습니다.</dd></div>
-        </dl>
-        <a class="btn-text" href="https://forwardus.onrender.com/" target="_blank" rel="noopener noreferrer">시연 사이트 열기 ↗<span class="sr">(새 창)</span></a>
+        <h4 class="blk-h"><span>2</span>과정</h4>
+        <ol class="process">
+          <li><b>문제 정의</b>시장 타당성 분석으로 규제 · 인지도 · 인력 문제 3가지를 정리</li>
+          <li><b>기준 세우기</b>경고장 문제 표현 53개 → 점검 규칙 13개. 역할 분담 · 브랜치 · 충돌 방지 규칙을 README에 먼저 정리</li>
+          <li><b>만들기</b>문제마다 해결 도구 하나씩 — 문구 점검 · 브랜드 사이트와 크리에이터 링크 · 마케팅 대시보드</li>
+          <li><b>측정</b>마케터 1명이 같은 과제를 기존 방식과 비교해 작업 시간 측정</li>
+        </ol>
+        <div class="solves">
+          <div><span>PAIN 01 →</span><b>광고 문구 점검</b><p>상세페이지 · 챗봇 답변 · 광고 문구를 13개 규칙으로 1차 점검. <small>법적 적합성을 보장하지 않으며 최종 판단은 담당자가 합니다.</small></p></div>
+          <div><span>PAIN 02 →</span><b>브랜드 사이트 · 크리에이터 링크</b><p>맛과 포맷을 앞세운 자사몰, 크리에이터별 전용 링크 · 할인코드로 유입부터 주문까지 추적</p></div>
+          <div><span>PAIN 03 →</span><b>마케팅 대시보드(팀)</b><p>하루 업무 순서대로 메뉴 8개 — 현황 · 콘텐츠 제작 · 문구 심의 · 인플루언서 · 고객 응대 · 성과 분석</p></div>
+        </div>
+
+        <h4 class="blk-h"><span>3</span>결과 <small>팀 전체 결과</small></h4>
+        <div class="result">
+          <div class="circles">
+            <div class="circle-m c1"><b>−64.7%</b><span>카드뉴스<br>제작시간</span></div>
+            <div class="circle-m c2"><b>−77.8%</b><span>광고 문구<br>1차 검토시간</span></div>
+            <div class="circle-m c3"><b>−52.8%</b><span>이미지<br>제작시간</span></div>
+          </div>
+          <div class="result-side">
+            <p class="scope">측정 범위 · 마케터 1명이 같은 과제를 비교한 실측</p>
+            <div class="dark-card keym">
+              <p class="dc-head">Key Metrics <b aria-hidden="true">✓</b></p>
+              <ul>
+                <li><b>91개</b> 5일간 SNS 게시물 (운영량)</li>
+                <li><b>4,961회</b> 프로젝트 계정 릴스 누적 조회 (콘텐츠 반응 · 매출 성과 아님)</li>
+                <li><b>시연용</b> 화면 속 주문 · 매출은 성과로 집계하지 않음</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="blk-h"><span>4</span>제가 맡은 일과 팀 결과물</h4>
+        <div class="contrib">
+          <div class="c-me">
+            <p class="c-h">제가 맡은 일</p>
+            <ul>
+              <li><b>PM</b>역할 분담 · 브랜치 · 충돌 방지 규칙을 README에 먼저 정리하고 개발 시작</li>
+              <li><b>브랜드 사이트 개발 · 배포</b>자사몰 · 크리에이터 링크 · 관리자 화면 · 챗봇</li>
+              <li><b>AI 사용 기준</b>챗봇 페르소나와 금지어, AI 초안을 관리자가 확인한 뒤 저장하는 절차</li>
+            </ul>
+          </div>
+          <div class="c-team">
+            <p class="c-h">팀 전체 결과물</p>
+            <ul>
+              <li>마케팅 담당자 대시보드(메뉴 8개)</li>
+              <li>브랜드 사이트와 대시보드를 잇는 데이터 API</li>
+              <li>미국 시장 타당성 분석 · 리브랜딩</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4 class="blk-h"><span>5</span>실제 화면 <small>눌러서 크게 보기 · 가상 브랜드 · 시연용 데이터</small></h4>
+        <div class="gallery" data-gallery="reboot">
+          <figure class="win"><div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="g-btn" data-title="브랜드 사이트 · 메인" data-desc="효능 대신 맛과 포맷(젤리 · 드링크)을 앞세운 첫 화면과 오른쪽 아래 챗봇 버튼을 확인할 수 있습니다."><img src="assets/img/hp-hero.jpg" width="1200" height="750" alt="REBOOT 브랜드 사이트 메인 화면" loading="lazy"></button><figcaption><b>브랜드 사이트 · 메인</b>맛과 포맷 중심의 첫 화면</figcaption></figure>
+          <figure class="win"><div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="g-btn" data-title="관리자 · 크리에이터 코드와 링크" data-desc="크리에이터 이름 · 플랫폼 · 할인율 · 수수료율을 넣어 전용 링크와 할인코드를 발급하는 화면입니다. 목록의 크리에이터는 가상 데이터입니다."><img src="assets/img/hp-admin-creator.jpg" width="1200" height="750" alt="크리에이터 코드와 링크 발급 관리자 화면" loading="lazy"></button><figcaption><b>관리자 · 크리에이터 링크</b>할인율 · 수수료율 설정과 링크 발급</figcaption></figure>
+          <figure class="win"><div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="g-btn" data-title="관리자 · 매출 현황" data-desc="기간 · 주문 상태별 주문 수 · 판매 수량 · 순매출 · 크리에이터 링크 경유 비중과 CSV 내보내기를 확인할 수 있습니다. 모든 값은 시연용 데이터입니다."><img src="assets/img/hp-admin-sales.jpg" width="1200" height="750" alt="관리자 매출 현황 화면" loading="lazy"></button><figcaption><b>관리자 · 매출 현황</b>시연용 데이터 · CSV 내보내기</figcaption></figure>
+          <figure class="win"><div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="g-btn" data-title="관리자 · 챗봇 질문 분석" data-desc="방문자 질문을 주제별로 모으고, 다시 쓴 답변 수와 막은 답변 수를 확인하는 화면입니다. 연락처 정보는 가려서 저장합니다."><img src="assets/img/hp-admin-chatbot.jpg" width="1200" height="750" alt="챗봇 질문 분석 관리자 화면" loading="lazy"></button><figcaption><b>관리자 · 챗봇 질문 분석</b>질문 주제 · 다시 쓴 답변 · 막은 답변</figcaption></figure>
+          <figure class="win"><div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="g-btn" data-title="브랜드 사이트 · 상품 상세" data-desc="옵션 선택 · 수량 · 장바구니 흐름과 ‘실제 결제 없음(Mock checkout)’ 안내를 확인할 수 있습니다."><img src="assets/img/hp-product.jpg" width="1200" height="750" alt="브랜드 사이트 상품 상세 화면" loading="lazy"></button><figcaption><b>브랜드 사이트 · 상품 상세</b>옵션 · 수량 · 장바구니</figcaption></figure>
+          <figure class="win"><div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="g-btn" data-title="대시보드(팀) · 홈 데일리 브리핑" data-desc="오늘 할 일 · 다가오는 시즌 D-day · 이번 주 매출 · 최근 활동을 한 화면에 모은 첫 화면입니다."><img src="assets/img/db-home.jpg" width="1200" height="750" alt="마케팅 대시보드 홈 데일리 브리핑 화면" loading="lazy"></button><figcaption><b>대시보드(팀) · 홈</b>오늘 할 일 · 시즌 D-day</figcaption></figure>
+          <figure class="win"><div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="g-btn" data-title="대시보드(팀) · 성과 분석" data-desc="기간별 광고비 · 매출 · ROAS · 전환수 · CPA · 순수익과 채널별 표, 보고서 만들기 버튼을 확인할 수 있습니다. 값은 시연용 데이터입니다."><img src="assets/img/db-performance.jpg" width="1200" height="750" alt="마케팅 대시보드 성과 분석 화면" loading="lazy"></button><figcaption><b>대시보드(팀) · 성과 분석</b>ROAS · CPA · 순수익 자동 계산</figcaption></figure>
+          <figure class="win"><div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="g-btn" data-title="대시보드(팀) · 광고 문구 심의" data-desc="문구를 넣으면 쓰면 안 되는 표현과 이유, 바꿔 쓸 표현을 보여 주는 1차 점검 화면입니다. 법적 검토를 대신하지 않습니다."><img src="assets/img/db-compliance.jpg" width="1200" height="750" alt="마케팅 대시보드 광고 문구 심의 화면" loading="lazy"></button><figcaption><b>대시보드(팀) · 광고 문구 심의</b>문제 표현과 대체 표현 제시</figcaption></figure>
+          <figure class="win"><div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="g-btn" data-title="대시보드(팀) · 인플루언서 · 파트너" data-desc="파트너 후보 목록을 구분 · 카테고리로 거르고, 선택한 업체에 보낼 제안서를 작성하는 화면입니다."><img src="assets/img/db-partner.jpg" width="1200" height="750" alt="마케팅 대시보드 파트너 찾기 화면" loading="lazy"></button><figcaption><b>대시보드(팀) · 파트너 찾기</b>후보 필터 · 제안서 작성</figcaption></figure>
+        </div>
+
+        <div class="links">
+          <a class="btn" href="https://reboot-us.onrender.com/" target="_blank" rel="noopener noreferrer">브랜드 사이트 시연 열기 ↗<span class="sr">(새 창)</span></a>
+          <a class="btn line" href="https://github.com/hyxxns0131/reboot_home" target="_blank" rel="noopener noreferrer">브랜드 사이트 GitHub ↗<span class="sr">(새 창)</span></a>
+        </div>
+        <p class="links-note">시연 사이트는 무료 서버라 첫 접속에 30초~1분 정도 걸릴 수 있습니다.</p>
+
+        <div class="more-info">
+          <details class="acc">
+            <summary>현업 도입을 고려해 안전장치를 설계했습니다</summary>
+            <ul class="acc-grid">
+              <li><b>AI는 초안만</b>저장은 관리자 확인 후</li>
+              <li><b>개인정보 가림</b>이메일 · 전화번호 마스킹</li>
+              <li><b>권한 확인</b>시스템 간 API는 토큰 인증</li>
+              <li><b>비밀정보 분리</b>API 키는 별도 설정 파일(.env)</li>
+              <li><b>비용 통제</b>견적 확인 후 생성 · 10분당 40건 제한</li>
+              <li><b>업로드 검증</b>JPG · PNG · WEBP만 허용</li>
+            </ul>
+          </details>
+          <details class="acc">
+            <summary>협업 방식 상세 · Git 규칙과 문서화</summary>
+            <div class="acc-body">
+              <ul class="git-rules">
+                <li><b>브랜치 전략</b><code>feature/이니셜-기능명</code> → <code>dev</code>로 PR → 확인 후 <code>main</code> 병합. 서버는 <code>main</code>만 배포</li>
+                <li><b>충돌 방지</b>파트별 폴더 · DB 테이블 · CSS 클래스에 접두사, 자기 폴더만 수정, 공통 파일은 PR에 [공통] 표시</li>
+                <li><b>한 PR = 한 파트</b>파트 간 의존 순서(공통 → 모델 → 관리자)를 README에 정해 병합 순서를 맞춤</li>
+                <li><b>보안</b><code>.env</code> · DB 파일은 Git에서 제외하고 <code>.env.example</code>만 공유</li>
+                <li><b>두 저장소 연결</b>브랜드 사이트와 대시보드는 저장소를 나누고, 토큰 인증 API로만 데이터를 주고받음</li>
+              </ul>
+              <p class="acc-note">README 40개 장 · 자동 테스트 60개 · 브랜드 사이트 저장소 커밋 25회 · 병합 6회</p>
+            </div>
+          </details>
+        </div>
       </div>
-    </article>
 
-    <div class="works reveal">
-      <div class="works-head" aria-hidden="true"><span>결과물</span><span>내용</span><span>도구</span><span></span></div>
-      <div class="work"><b>무역분석 대시보드</b><span>무역 데이터를 차트로 정리한 대시보드</span><em>Streamlit</em><a href="https://project1-pne9jxgxg5ndurd65zbzzm.streamlit.app/" target="_blank" rel="noopener noreferrer" aria-label="무역분석 대시보드 열기 (새 창)">열기 ↗</a></div>
-      <div class="work"><b>무역 직무 분석 대시보드</b><span>무역 직무 정보를 정리한 대시보드</span><em>Streamlit</em><a href="https://hyeonax-vth5ylu5cpnmgxky32p9mz.streamlit.app/" target="_blank" rel="noopener noreferrer" aria-label="무역 직무 분석 대시보드 열기 (새 창)">열기 ↗</a></div>
-      <div class="work"><b>실시간 환율</b><span>환율 API로 실시간 환율 표시</span><em>Streamlit · API</em><a href="https://hyeonax-cz6ur9wpd6kgftjbmabffa.streamlit.app/" target="_blank" rel="noopener noreferrer" aria-label="실시간 환율 열기 (새 창)">열기 ↗</a></div>
-      <div class="work"><b>무역 학습 게임</b><span>선적장을 돌며 무역 개념을 익히는 게임</span><em>HTML · JS</em><a href="https://trade-adventure-game.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="무역 학습 게임 열기 (새 창)">열기 ↗</a></div>
-      <div class="work"><b>프롬프트 정리</b><span>상황별 프롬프트를 웹페이지로 정리</span><em>HTML</em><a href="https://prompt1019.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="프롬프트 정리 열기 (새 창)">열기 ↗</a></div>
+      <!-- ===== 02 ForwardUs ===== -->
+      <div class="pf-panel" role="tabpanel" id="panel-forwardus" aria-labelledby="tab-forwardus" tabindex="0" hidden>
+        <div class="pp-head">
+          <div>
+            <p class="pp-kicker">팀 프로젝트 · 무역 AX 마스터 2기 1차 프로젝트</p>
+            <h3 class="pp-title">ForwardUs</h3>
+            <p class="pp-lead">수출을 처음 맡은 담당자를 위해 <b>견적 · 서류 · 조회</b>를 한곳에 모은 수출 업무 플랫폼입니다.</p>
+          </div>
+          <dl class="pp-meta">
+            <div><dt>기간</dt><dd>2026.09.18 – 09.28</dd></div>
+            <div><dt>팀</dt><dd>5명</dd></div>
+            <div><dt>본인 역할</dt><dd>메인 챗봇 ‘AI 포포링’ 기획</dd></div>
+          </dl>
+        </div>
+
+        <h4 class="blk-h"><span>1</span>페인포인트</h4>
+        <div class="pains">
+          <article><p class="pn">PAIN 01 · 서류</p><h5>같은 정보를 여러 서류에 옮겨 적기</h5><p>Offer Sheet의 품목 · 수량 · 단가를 상업송장(C/I) · 포장명세서(P/L)에 다시 입력해야 합니다.</p></article>
+          <article><p class="pn">PAIN 02 · 용어 · 절차</p><h5>처음 맡으면 모르는 것이 많음</h5><p>FOB와 CIF의 차이, 인코텀즈 선택, 원산지증명서 발급처 같은 질문이 반복됩니다.</p></article>
+          <article><p class="pn">PAIN 03 · 흩어진 조회</p><h5>사이트를 오가며 확인</h5><p>운송 견적 · HS Code · 환율 · 화물 위치를 각각 다른 곳에서 찾아야 합니다.</p></article>
+        </div>
+
+        <h4 class="blk-h"><span>2</span>과정</h4>
+        <div class="fu-flow" aria-label="Offer Sheet에서 C/I와 P/L이 만들어지는 흐름">
+          <div class="ff-doc">Offer_Sheet.pdf</div>
+          <i class="ff-arrow" aria-hidden="true"></i>
+          <div class="ff-ai">AI가 품목 · 수량 · 단가 추출</div>
+          <i class="ff-arrow" aria-hidden="true"></i>
+          <div class="ff-out"><span>C/I</span><span>P/L</span></div>
+        </div>
+        <ol class="process">
+          <li><b>업무 흐름 정리</b>수출 초보 담당자의 일을 견적 → 서류 → 운송 → 조회 순서로 나눔</li>
+          <li><b>기능으로 나누기</b>무역 상담 · 서류 작성 · 운송 견적 · 화물 조회 · 관세청 조회 · 환율 센터 6개 메뉴</li>
+          <li><b>챗봇 답변 원칙</b>관세율 · 운임 같은 숫자는 짐작해서 답하지 않고 조회 화면으로 안내</li>
+          <li><b>배포</b>Streamlit 앱을 Render에 배포해 누구나 접속 가능하게</li>
+        </ol>
+
+        <h4 class="blk-h"><span>3</span>결과</h4>
+        <div class="result fu-result">
+          <div class="dark-card keym">
+            <p class="dc-head">결과물 <b aria-hidden="true">✓</b></p>
+            <ul>
+              <li><b>서류</b> Offer Sheet를 읽어 C/I · P/L 자동 작성, 인쇄 · PDF 저장</li>
+              <li><b>상담</b> 무역 용어 · 절차를 묻는 챗봇 ‘AI 포포링’</li>
+              <li><b>조회</b> 운송 예상 견적 · HS Code · 환율 · 화물 조회</li>
+            </ul>
+          </div>
+          <div class="fu-learn">
+            <p class="c-h">배운 점</p>
+            <p>업무 분담이 흐렸던 경험을 바탕으로, 다음 프로젝트 REBOOT에서는 <b>역할과 Git 규칙을 먼저 정하고</b> 개발을 시작했습니다.</p>
+            <p class="tools-line">Streamlit · OpenAI · 관세청 UNI-PASS · 환율 API</p>
+          </div>
+        </div>
+
+        <h4 class="blk-h"><span>4</span>실제 화면 <small>눌러서 크게 보기</small></h4>
+        <div class="gallery one" data-gallery="fu">
+          <figure class="win"><div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div><button type="button" class="g-btn" data-title="ForwardUs · 전체 대시보드" data-desc="계정 · 플랫폼의 모든 화물(Shipment)을 견적부터 도착까지 상태별로 모아 보고, 검색과 CSV 내려받기를 하는 화면입니다."><img src="assets/img/fu-12.jpg" width="1200" height="613" alt="ForwardUs 전체 대시보드 화면" loading="lazy"></button><figcaption><b>전체 대시보드</b>화물 상태별 현황 · 검색 · CSV</figcaption></figure>
+        </div>
+        <div class="links">
+          <a class="btn" href="https://forwardus.onrender.com/" target="_blank" rel="noopener noreferrer">시연 사이트 열기 ↗<span class="sr">(새 창)</span></a>
+        </div>
+        <p class="links-note">무료 서버라 첫 접속에 30초~1분 정도 걸릴 수 있습니다.</p>
+      </div>
+
+      <!-- ===== 03 개인 포트폴리오 ===== -->
+      <div class="pf-panel" role="tabpanel" id="panel-personal" aria-labelledby="tab-personal" tabindex="0" hidden>
+        <div class="pp-head">
+          <div>
+            <p class="pp-kicker">개인 작업 · 2026.09 – 2026.10</p>
+            <h3 class="pp-title">개인 포트폴리오</h3>
+            <p class="pp-lead">AX 과정에서 혼자 만들어 배포한 결과물입니다. 업무에 가까운 것부터 정리했습니다.</p>
+          </div>
+          <dl class="pp-meta">
+            <div><dt>역할</dt><dd>기획 · 제작 · 배포 (개인)</dd></div>
+            <div><dt>도구</dt><dd>Streamlit · HTML · JavaScript · API · 생성형 AI</dd></div>
+          </dl>
+        </div>
+
+        <div class="personal">
+          <a class="pc win" href="https://project1-pne9jxgxg5ndurd65zbzzm.streamlit.app/" target="_blank" rel="noopener noreferrer">
+            <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="pc-body"><span class="pc-cat">데이터</span><h4>무역분석 대시보드</h4><p>무역 데이터를 차트로 정리한 대시보드</p><span class="pc-meta">2026.09 · Streamlit</span><span class="pc-go">열기 ↗<span class="sr">(새 창)</span></span></div>
+          </a>
+          <a class="pc win" href="https://hyeonax-vth5ylu5cpnmgxky32p9mz.streamlit.app/" target="_blank" rel="noopener noreferrer">
+            <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="pc-body"><span class="pc-cat">데이터</span><h4>무역 직무 분석 대시보드</h4><p>무역 직무 정보를 정리한 대시보드</p><span class="pc-meta">2026.09 · Streamlit</span><span class="pc-go">열기 ↗<span class="sr">(새 창)</span></span></div>
+          </a>
+          <a class="pc win" href="https://hyeonax-cz6ur9wpd6kgftjbmabffa.streamlit.app/" target="_blank" rel="noopener noreferrer">
+            <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="pc-body"><span class="pc-cat">API</span><h4>실시간 환율</h4><p>환율 API로 실시간 환율 표시</p><span class="pc-meta">2026.09 · Streamlit · API</span><span class="pc-go">열기 ↗<span class="sr">(새 창)</span></span></div>
+          </a>
+          <a class="pc win" href="https://trade-adventure-game.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="pc-body"><span class="pc-cat">교육 콘텐츠</span><h4>무역 학습 게임</h4><p>선적장을 돌며 무역 개념을 익히는 게임</p><span class="pc-meta">2026.10 · HTML · JS</span><span class="pc-go">열기 ↗<span class="sr">(새 창)</span></span></div>
+          </a>
+          <a class="pc win" href="https://prompt1019.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="pc-body"><span class="pc-cat">업무 정리</span><h4>프롬프트 정리</h4><p>상황별 프롬프트를 웹페이지로 정리</p><span class="pc-meta">2026.10 · HTML</span><span class="pc-go">열기 ↗<span class="sr">(새 창)</span></span></div>
+          </a>
+        </div>
+        <p class="links-note">Streamlit 앱은 오래 쓰지 않으면 잠들어, 처음 열 때 깨우는 버튼이 나올 수 있습니다.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ ⑤ RESUME ============ -->
-<section class="resume sec" id="resume">
+<!-- ============ RESUME ============ -->
+<section class="sec resume" id="resume">
   <div class="wrap">
-    <div class="sec-top reveal">
-      <p class="label">Resume · Tools</p>
+    <div class="sec-head reveal">
+      <p class="eyebrow">RESUME · TOOLS</p>
       <h2>이력 · 도구</h2>
     </div>
     <div class="cv reveal">
@@ -330,18 +464,22 @@
 
 </main>
 
-<!-- ============ ⑥ CONTACT ============ -->
-<footer class="contact dark" id="contact">
-  <canvas class="stars" aria-hidden="true"></canvas>
+<!-- ============ CONTACT ============ -->
+<footer class="sec contact" id="contact">
   <div class="wrap contact-in">
-    <h2 class="contact-title reveal">상품 운영의 반복 업무를 줄이는 일,<br><span class="blue-l">함께하고 싶습니다.</span></h2>
-    <p class="contact-name reveal">강현서 · Hyeonseo Kang</p>
-    <p class="contact-mail reveal">hyxxns0131@gmail.com</p>
-    <div class="contact-btns reveal" id="contactBtns">
-      <a class="btn-pill" href="mailto:hyxxns0131@gmail.com">메일 보내기</a>
-      <button type="button" class="btn-pill line" data-copy="hyxxns0131@gmail.com" data-copy-label="이메일 주소">주소 복사</button>
+    <h2 class="work-with reveal">Work<br>with Me!</h2>
+    <div class="contact-side reveal">
+      <p class="contact-msg">상품 운영의 반복 업무를 줄이는 일,<br>함께하고 싶습니다.</p>
+      <div class="dark-card contact-card">
+        <p class="dc-head">CONTACT ME <b aria-hidden="true">✓</b></p>
+        <p class="cc-row"><span class="cc-ico" aria-hidden="true">✉</span><span class="cc-mail">hyxxns0131@gmail.com</span></p>
+        <div class="cc-btns" id="contactBtns">
+          <a class="btn small" href="mailto:hyxxns0131@gmail.com">메일 보내기</a>
+          <button type="button" class="btn small line-l" data-copy="hyxxns0131@gmail.com" data-copy-label="이메일 주소">주소 복사</button>
+        </div>
+      </div>
     </div>
-    <p class="foot">© 2026 강현서</p>
+    <p class="foot">© 2026 강현서 · Hyeonseo Kang</p>
   </div>
 </footer>
 
@@ -356,9 +494,7 @@
       <button type="button" class="lbx-btn" id="lbxClose">닫기</button>
     </div>
   </div>
-  <div class="lbx-stage" id="lbxStage">
-    <img id="lbxImg" alt="">
-  </div>
+  <div class="lbx-stage" id="lbxStage"><img id="lbxImg" alt=""></div>
   <button type="button" class="lbx-nav prev" id="lbxPrev" aria-label="이전 이미지">‹</button>
   <button type="button" class="lbx-nav next" id="lbxNext" aria-label="다음 이미지">›</button>
   <div class="lbx-cap">

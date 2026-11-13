@@ -9,39 +9,6 @@
   var reduce = reduceMQ.matches;
   if (!reduce && "IntersectionObserver" in window) document.documentElement.classList.add("js");
 
-  /* ---------- 별 배경 (동작 줄이기면 정지 화면) ---------- */
-  document.querySelectorAll("canvas.stars").forEach(function (cv) {
-    var ctx = cv.getContext("2d"), stars = [], w, h, dpr = Math.min(window.devicePixelRatio || 1, 2), running = false;
-    function size() {
-      w = cv.offsetWidth; h = cv.offsetHeight;
-      cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var n = Math.round((w * h) / 7000);
-      stars = [];
-      for (var i = 0; i < n; i++) stars.push({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.1 + 0.2, a: Math.random() * 6, s: Math.random() * 0.012 + 0.003 });
-      if (reduce) draw();
-    }
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      for (var i = 0; i < stars.length; i++) {
-        var s = stars[i];
-        if (!reduce) s.a += s.s;
-        ctx.fillStyle = "rgba(255,255,255," + (0.2 + Math.abs(Math.sin(s.a)) * 0.6).toFixed(3) + ")";
-        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fill();
-      }
-      if (running) requestAnimationFrame(draw);
-    }
-    size();
-    window.addEventListener("resize", size);
-    if (!reduce && "IntersectionObserver" in window) {
-      new IntersectionObserver(function (es) {
-        es.forEach(function (e) {
-          if (e.isIntersecting && !running) { running = true; draw(); }
-          else if (!e.isIntersecting) running = false;
-        });
-      }).observe(cv);
-    } else draw();
-  });
-
   /* ---------- 화면에 들어오면 표시 ---------- */
   var reveals = document.querySelectorAll(".reveal");
   if (document.documentElement.classList.contains("js")) {
@@ -81,7 +48,7 @@
   var btns = document.getElementById("contactBtns");
   if (phone && btns) {
     var a = document.createElement("a");
-    a.className = "btn-pill line"; a.href = "tel:" + phone.replace(/[^0-9+]/g, "");
+    a.className = "btn small line-l"; a.href = "tel:" + phone.replace(/[^0-9+]/g, "");
     a.textContent = "전화 걸기 · " + phone;
     btns.appendChild(a);
   }
@@ -89,31 +56,63 @@
   /* ---------- 헤더 · 모바일 메뉴 · 현재 위치 ---------- */
   var header = document.getElementById("header");
   var menuBtn = document.getElementById("menuBtn"), gnb = document.getElementById("gnb");
-  var darks = Array.prototype.slice.call(document.querySelectorAll(".dark"));
-  var links = Array.prototype.slice.call(gnb.querySelectorAll('a[href^="#"]:not(.gnb-contact)'));
+  var links = Array.prototype.slice.call(gnb.querySelectorAll('a[href^="#"]'));
   function setMenu(open) {
     menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
     menuBtn.querySelector(".menu-txt").textContent = open ? "닫기" : "메뉴";
     gnb.classList.toggle("open", open);
-    header.classList.toggle("menu-open", open);
   }
   menuBtn.addEventListener("click", function () { setMenu(menuBtn.getAttribute("aria-expanded") !== "true"); });
   gnb.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && gnb.classList.contains("open")) { setMenu(false); menuBtn.focus(); } });
   document.addEventListener("click", function (e) { if (gnb.classList.contains("open") && !header.contains(e.target)) setMenu(false); });
-
   function onScroll() {
-    var hh = header.offsetHeight / 2;
-    var overDark = darks.some(function (d) { var r = d.getBoundingClientRect(); return r.top <= hh && r.bottom >= hh; });
-    header.classList.toggle("light", !overDark);
-    header.classList.toggle("scrolled", window.pageYOffset > 10);
     var cur = -1;
-    links.forEach(function (a, i) { var s = document.querySelector(a.getAttribute("href")); if (s && s.getBoundingClientRect().top < header.offsetHeight + 80) cur = i; });
+    links.forEach(function (a, i) { var s = document.querySelector(a.getAttribute("href")); if (s && s.getBoundingClientRect().top < header.offsetHeight + 90) cur = i; });
     links.forEach(function (a, i) { a.classList.toggle("on", i === cur); if (i === cur) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
   }
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
   onScroll();
+
+  /* ---------- 프로젝트 폴더 탭 ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.pf-tabs [role="tab"]'));
+  function selectTab(t, focus) {
+    tabs.forEach(function (x) {
+      var on = x === t;
+      x.setAttribute("aria-selected", on ? "true" : "false");
+      x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (focus) t.focus();
+    document.querySelectorAll("#" + t.getAttribute("aria-controls") + " .reveal").forEach(function (el) { el.classList.add("in"); });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { selectTab(t); });
+    t.addEventListener("keydown", function (e) {
+      var n = null;
+      if (e.key === "ArrowRight") n = tabs[(i + 1) % tabs.length];
+      else if (e.key === "ArrowLeft") n = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (e.key === "Home") n = tabs[0];
+      else if (e.key === "End") n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); selectTab(n, true); }
+    });
+  });
+  /* 주소 끝이 #reboot · #forwardus · #personal 이면 그 폴더를 열고 이동 */
+  function openFromHash() {
+    var h = location.hash.replace("#", "");
+    var t = tabs.filter(function (x) { return x.dataset.hash === h; })[0];
+    if (t) { selectTab(t); document.getElementById("work").scrollIntoView(); }
+  }
+  window.addEventListener("hashchange", openFromHash);
+  openFromHash();
+
+  /* ---------- 프로필 사진 칸 (assets/img/me.jpg 가 있으면 표시) ---------- */
+  var me = document.getElementById("mePhoto"), empty = document.getElementById("photoEmpty");
+  if (me) {
+    var showMe = function () { me.hidden = false; empty.hidden = true; };
+    if (me.complete && me.naturalWidth) showMe();
+    me.addEventListener("load", showMe);
+  }
 
   /* ---------- 이미지 뷰어 (클릭해서 크게 보기) ---------- */
   var lbx = document.getElementById("lbx"), lbxImg = document.getElementById("lbxImg"), stage = document.getElementById("lbxStage");

@@ -5,11 +5,17 @@
 
 ## 구조
 - index.html : 섹션 순서
-  ① 첫 화면 → ② 신성통상 인턴 → ③ REBOOT → ④ ForwardUs·기타 → ⑤ 이력·도구 → ⑥ 연락처
-- css/style.css : 맨 위 :root 에 색 (--blue 가 로즈 포인트 색)
-- js/main.js : 별 배경, 화면 표시 효과, 모바일 메뉴, 이미지 뷰어, 주소 복사, 3D 캐릭터
+  표지(Portfolio) → 소개(사진 칸) → 워크플로우 → 신성통상 인턴 → 프로젝트 폴더(01 REBOOT · 02 ForwardUs · 03 개인) → 이력·도구 → 연락처
+- css/style.css : 맨 위 :root 에 색 (크림 배경 · 파란 폴더 · 검정 카드)
+- js/main.js : 화면 표시 효과, 모바일 메뉴, 프로젝트 폴더 탭, 사진 칸, 이미지 뷰어, 주소 복사, 3D 캐릭터
 - js/vendor/model-viewer-umd.min.js : 3D 캐릭터 표시 (gsap · ScrollTrigger · lenis 파일은 현재 쓰지 않음)
 - assets/img/ : 화면 캡처 · 포스터, assets/3d/ : 3D 캐릭터
+
+## 프로필 사진
+- `assets/img/me.jpg` 파일을 넣으면 소개 칸에 자동으로 보임 (세로 4:5 비율 권장). 없으면 "프로필 사진 자리"가 보임
+
+## 프로젝트 폴더 탭
+- 주소 끝에 `#reboot` · `#forwardus` · `#personal` 을 붙이면 그 폴더가 열린 채로 이동
 
 ## 이미지 뷰어
 - `.g-btn` 버튼 안에 `<img>` 를 넣고 `data-title`(무슨 화면) · `data-desc`(무엇을 확인할 수 있는지)를 적으면 자동으로 크게 보기가 됨
